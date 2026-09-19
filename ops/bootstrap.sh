@@ -5,6 +5,7 @@ REPO_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)"
 DATA_DIR="${DRAMA_DATA_DIR:-/root/autodl-tmp/drama-research-20260919}"
 ENV_DIR="${DRAMA_ENV_DIR:-$DATA_DIR/envs/drama-cu128}"
 BASE_PYTHON="${DRAMA_BASE_PYTHON:-python}"
+PYPI_INDEX="${DRAMA_PYPI_INDEX:-https://pypi.org/simple}"
 "$BASE_PYTHON" -c 'import sys; assert sys.version_info[:2] == (3, 12), "Python 3.12 required"'
 command -v nvcc >/dev/null || { echo 'CUDA development toolkit is required'; exit 1; }
 command -v g++ >/dev/null || { echo 'C++ compiler is required'; exit 1; }
@@ -26,12 +27,12 @@ if [[ ! -e "$ENV_DIR" ]]; then
 fi
 PYTHON="$ENV_DIR/bin/python"
 CONSTRAINTS="$REPO_DIR/ops/constraints-cu128.txt"
-"$PYTHON" -m pip install --index-url https://pypi.org/simple 'pip==25.1.1' 'setuptools==75.8.0' wheel ninja packaging
+"$PYTHON" -m pip install --index-url "$PYPI_INDEX" 'pip==25.1.1' 'setuptools==75.8.0' wheel ninja packaging
 "$PYTHON" -m pip install -c "$CONSTRAINTS" torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128
-"$PYTHON" -m pip install --index-url https://pypi.org/simple -c "$CONSTRAINTS" einops transformers
-"$PYTHON" -m pip install --index-url https://pypi.org/simple -c "$CONSTRAINTS" causal-conv1d --no-build-isolation
-"$PYTHON" -m pip install --index-url https://pypi.org/simple -c "$CONSTRAINTS" mamba-ssm --no-build-isolation
-"$PYTHON" -m pip install --index-url https://pypi.org/simple -c "$CONSTRAINTS" -r "$REPO_DIR/requirements.txt"
+"$PYTHON" -m pip install --index-url "$PYPI_INDEX" -c "$CONSTRAINTS" einops transformers
+"$PYTHON" -m pip install --index-url "$PYPI_INDEX" -c "$CONSTRAINTS" causal-conv1d --no-build-isolation
+"$PYTHON" -m pip install --index-url "$PYPI_INDEX" -c "$CONSTRAINTS" mamba-ssm --no-build-isolation
+"$PYTHON" -m pip install --index-url "$PYPI_INDEX" -c "$CONSTRAINTS" -r "$REPO_DIR/requirements.txt"
 "$PYTHON" -m pip check
 "$PYTHON" -m pip freeze > "$DATA_DIR/reports/freeze-$STAMP.txt"
 cd "$REPO_DIR"

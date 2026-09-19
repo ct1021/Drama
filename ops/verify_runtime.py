@@ -74,9 +74,33 @@ def main():
                 "max_cache_error": float((full-incremental).abs().max())}
 
     def imports_check():
-        for name in ("agents", "sub_models.world_models", "replay_buffer", "eval"):
+        for name in ("agents", "sub_models.world_models", "replay_buffer", "eval", "train"):
             importlib.import_module(name)
-        return "Drama model, policy, replay and evaluation modules imported"
+        return "Drama model, policy, replay, evaluation and training entry imported"
+
+    def imagination_check():
+        import torch
+        import yaml
+        from train import DotDict, build_world_model, build_agent
+        config = DotDict(yaml.safe_load((ROOT / "config_files/configure.yaml").read_text()))
+        config.Models.WorldModel.dtype = torch.float32
+        config.Models.Agent.dtype = torch.float32
+        wm = build_world_model(config, 18, "cuda:0").eval()
+        agent = build_agent(config, 18, "cuda:0").eval()
+        # Small tensor plumbing check, not a learned policy or benchmark run.
+        obs = torch.rand(2, 8, 3, 64, 64, device="cuda")
+        actions = torch.zeros(2, 8, dtype=torch.long, device="cuda")
+        with torch.no_grad():
+            output = wm.imagine_data2(agent, obs, actions, 2, 4, False, None, 0)
+        shapes = []
+        for value in output:
+            if isinstance(value, torch.Tensor):
+                assert torch.isfinite(value).all()
+                shapes.append(list(value.shape))
+        torch.cuda.synchronize()
+        return {"cuda_graph": config.BasicSettings.Use_cg,
+                "output_shapes": shapes, "optimizer_steps": 0,
+                "torch_compile_tested": False}
 
     def atari_check():
         from envs.my_atari import Atari
@@ -101,6 +125,7 @@ def main():
     check("vendored_mamba_forward_backward_and_cache", mamba_check)
     check("drama_component_imports", imports_check)
     check("atari_rom_and_wrapper", atari_check)
+    check("drama_imagination_with_default_cuda_graph", imagination_check)
     print(json.dumps({"scope": "environment verification, not RL evidence",
                       "results": results}, indent=2, ensure_ascii=False))
     return 0 if all(item["ok"] for item in results) else 1
