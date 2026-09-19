@@ -37,8 +37,8 @@ CONSTRAINTS="$REPO_DIR/ops/constraints-cu128.txt"
 "$PYTHON" -m pip install --index-url "$PYPI_INDEX" -c "$CONSTRAINTS" \
     filelock typing-extensions sympy networkx jinja2 fsspec numpy pillow mpmath MarkupSafe
 TORCH_PACKAGES=(torch torchvision torchaudio)
-TORCH_WHEEL="$DATA_DIR/wheels/torch-2.7.0+cu128-cp312-cp312-manylinux_2_28_x86_64.whl"
-TRITON_WHEEL="$DATA_DIR/wheels/triton-3.3.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl"
+TORCH_WHEEL="$DATA_DIR/wheels/torch-2.7.1+cu128-cp312-cp312-manylinux_2_28_x86_64.whl"
+TRITON_WHEEL="$DATA_DIR/wheels/triton-3.3.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl"
 if [[ -f "$TORCH_WHEEL" ]]; then
     TORCH_PACKAGES[0]="$TORCH_WHEEL"
 fi

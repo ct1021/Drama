@@ -38,7 +38,7 @@ def main():
         if response.status != 206:
             raise ValueError("Server did not support HTTP ranges")
         size = int(response.headers["Content-Range"].split("/")[-1])
-    count = 16
+    count = 32
     step = (size + count - 1) // count
     print(f"Downloading {filename}: {size} bytes, {count} connections", flush=True)
     with tempfile.TemporaryDirectory(prefix="wheel-parts-", dir=args.directory) as tmp:

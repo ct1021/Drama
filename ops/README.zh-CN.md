@@ -30,6 +30,14 @@
 
 Drama 包含自己的 `mamba_ssm/` Python 源码，其中有 `MambaWrapperModel` 等定制接口。因此验收必须从仓库根目录执行，核对模块来源；仅成功导入 PyPI 的 Mamba 不够。
 
+## RTX 5090 的扩展兼容处理
+
+实测官方 causal-conv1d 1.5.2 预编译 wheel 在 SM 12.0 上报 `no kernel image`。其源码默认目标最高只包含 SM 10.0，单独设置 `TORCH_CUDA_ARCH_LIST` 无法覆盖源码中显式写出的编译目标。
+
+`build_causal_sm120.sh` 使用已校验的 1.5.2 源码，将编译目标设置为 SM 12.0，并将本地版本标为 `1.5.2+sm120`，不修改 `csrc/` 计算代码。构建出的 wheel 和校验值保存在数据盘 `built-wheels/`。`bootstrap.sh` 在检测到 SM 12.0 时自动使用这一路径；其他设备仍需自行验收，不宣称覆盖全部 GPU。
+
+官方 Release wheel 的文件名还包含 CUDA/Torch/ABI 后缀，而包内版本没有相同后缀。`prepare_wheels.py` 先核对原文件 SHA256，再为其创建与包内版本一致的文件名；原文件和二进制内容均保留。
+
 ## 验收范围
 
 环境验收还包含一个小批量 Drama 想象调用，使用默认 CUDA Graph，且不执行优化器更新。通过只说明被检查的计算路径可用，不代表完整训练协议、所有批量/精度、torch.compile 或研究假说已验证。正式训练另行确定配置和预算。
