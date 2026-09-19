@@ -64,6 +64,13 @@ def main():
             seq = x.detach()[:, :8].contiguous()
             full = model(seq)
             cache = InferenceParams(max_seqlen=8, max_batch_size=2)
+            assert cache.key_value_dtype is None
+            explicit_cache = InferenceParams(max_seqlen=8, max_batch_size=2,
+                                            key_value_dtype=torch.float32)
+            explicit_first = model(seq[:, :1].contiguous(),
+                                   inference_params=explicit_cache)
+            torch.testing.assert_close(full[:, :1], explicit_first,
+                                       rtol=1e-3, atol=1e-3)
             pieces = []
             for step in range(8):
                 cache.seqlen_offset = step

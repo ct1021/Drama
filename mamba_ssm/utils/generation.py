@@ -25,6 +25,8 @@ class InferenceParams:
     batch_size_offset: int = 0
     key_value_memory_dict: dict = field(default_factory=dict)
     lengths_per_sample: Optional[Tensor] = None
+    # Mamba2 and Drama's non-graph inference path use this optional cache dtype.
+    key_value_dtype: Optional[torch.dtype] = None
 
     def reset(self, max_seqlen, max_batch_size):
         self.max_seqlen = max_seqlen
