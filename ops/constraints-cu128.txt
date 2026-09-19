@@ -1,4 +1,4 @@
-# Candidate profile; marked verified only after server checks pass.
+# RTX 5090 environment checks passed; see validated/20260919-rtx5090.
 torch==2.7.1
 torchvision==0.22.1
 torchaudio==2.7.1
