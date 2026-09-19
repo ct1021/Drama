@@ -85,8 +85,8 @@ def main():
         import yaml
         from train import DotDict, build_world_model, build_agent
         config = DotDict(yaml.safe_load((ROOT / "config_files/configure.yaml").read_text()))
-        config.Models.WorldModel.dtype = torch.float32
-        config.Models.Agent.dtype = torch.float32
+        config["Models"]["WorldModel"]["dtype"] = torch.float32
+        config["Models"]["Agent"]["dtype"] = torch.float32
         wm = build_world_model(config, 18, "cuda:0").eval()
         agent = build_agent(config, 18, "cuda:0").eval()
         # Small tensor plumbing check, not a learned policy or benchmark run.

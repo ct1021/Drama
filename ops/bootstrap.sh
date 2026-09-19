@@ -55,7 +55,12 @@ fi
 if [[ -f "$DATA_DIR/wheels/mamba_ssm-2.2.6.post3-cp312-cp312-linux_x86_64.whl" ]]; then
     MAMBA_PACKAGE="$DATA_DIR/wheels/mamba_ssm-2.2.6.post3-cp312-cp312-linux_x86_64.whl"
 fi
-"$PYTHON" -m pip install --index-url "$PYPI_INDEX" -c "$CONSTRAINTS" "$CAUSAL_PACKAGE" --no-build-isolation
+GPU_CAPABILITY="$("$PYTHON" -c 'import torch; print("%d%d" % torch.cuda.get_device_capability(0))')"
+if [[ "$GPU_CAPABILITY" == "120" ]]; then
+    bash "$REPO_DIR/ops/build_causal_sm120.sh"
+else
+    "$PYTHON" -m pip install --index-url "$PYPI_INDEX" -c "$CONSTRAINTS" "$CAUSAL_PACKAGE" --no-build-isolation
+fi
 "$PYTHON" -m pip install --index-url "$PYPI_INDEX" -c "$CONSTRAINTS" "$MAMBA_PACKAGE" --no-build-isolation
 "$PYTHON" -m pip install --index-url "$PYPI_INDEX" -c "$CONSTRAINTS" -r "$REPO_DIR/requirements.txt"
 "$PYTHON" -m pip check
