@@ -1,0 +1,534 @@
+{
+  "schema": 1,
+  "training_commit": "d4b2182c18bfb7a4d152f2fc76c16435cd0aa16e",
+  "training_interactions": 100000,
+  "evaluation_mean": 32.9,
+  "exact_training_resume": false,
+  "files": [
+    {
+      "path": "experiment/manifest.json",
+      "bytes": 827,
+      "sha256": "a7030e00731c80eb080cbbb3cea17d75d68a35dd419529edc237119bf2b99d0c"
+    },
+    {
+      "path": "experiment/config.resolved.json",
+      "bytes": 4330,
+      "sha256": "2fe905c1b4908540acde6596aa3328d87e45748f32c47250900fc57894ec61a3"
+    },
+    {
+      "path": "experiment/status.json",
+      "bytes": 1486,
+      "sha256": "37459dac21b00952ae614c49ceb3e35d3fec3a996aafabae8048e28c15e8f247"
+    },
+    {
+      "path": "experiment/evaluations.jsonl",
+      "bytes": 3467,
+      "sha256": "b7713f778458b034a2c31c0a3c1fa73fc783d025cbffb100c6ecfc9d5d606f90"
+    },
+    {
+      "path": "experiment/metrics.jsonl",
+      "bytes": 150719195,
+      "sha256": "986f535ce0a555b9d812d438c4cf8d83f3047db937458ec65b5ab018c29e5c30"
+    },
+    {
+      "path": "experiment/console.log",
+      "bytes": 103622,
+      "sha256": "a72bdee0edaebbada122c3b2796b312d5161604ab1ef709ea70d8ab25bf9f8cf"
+    },
+    {
+      "path": "experiment/ckpt/world_model-final.pth",
+      "bytes": 87742001,
+      "sha256": "dca730ef06a75a7c863d42f5e4e7819128e7ad4ea98d95b202a1073151e5e132"
+    },
+    {
+      "path": "experiment/ckpt/agent-final.pth",
+      "bytes": 13690652,
+      "sha256": "41ad2e0dfa7a4011c9134841e50f132e1cd9a8db8843d3388d47a6ddc9ec3457"
+    },
+    {
+      "path": "environment/versions.txt",
+      "bytes": 2504,
+      "sha256": "15e63212fba67ae6f16ab387423f5e1ec4a88f640aa29dab6386f2a0d41c9acf"
+    },
+    {
+      "path": "environment/probe.json",
+      "bytes": 2071,
+      "sha256": "4ff190a85b493272693d0ab7510ef4e31692c3c74c4a18154bc119e53e7f1d51"
+    },
+    {
+      "path": "environment/runtime-verification.json",
+      "bytes": 1878,
+      "sha256": "7c0e34cf76f5d42cab623bcb96ff18eb8129a6a55dd8727d19975c9c2a6c0418"
+    },
+    {
+      "path": "environment/wheels/causal_conv1d-1.5.2+sm120-cp312-cp312-linux_x86_64.whl",
+      "bytes": 22774720,
+      "sha256": "20468b74716b8d5b252588b0263629454cedcd053e2bb8e58f53da6730f2a0db"
+    },
+    {
+      "path": "code/.gitattributes",
+      "bytes": 85,
+      "sha256": "3d49ec9ca603b02ab30ea09e5bfe063ed14ca34e36fddfab24c76534aca43f34"
+    },
+    {
+      "path": "code/.gitignore",
+      "bytes": 107,
+      "sha256": "a8ee705dff46abf61b50a1b8ee01e976b54027838b19413c5501fee8306c1541"
+    },
+    {
+      "path": "code/Dockerfile",
+      "bytes": 1582,
+      "sha256": "007aa28b1211865380f8b100add1931cc2e6531e392916b260ac690d84276af0"
+    },
+    {
+      "path": "code/agents.py",
+      "bytes": 27409,
+      "sha256": "2bde9fb49a0da63a8d83ae9c248d04d4cd991c69da3069d154c7d58fe77172c1"
+    },
+    {
+      "path": "code/atari_performance.csv",
+      "bytes": 1427,
+      "sha256": "e0624fd1ab29904cfcd1fa82522171e2aa5ccce1229f5a3117a58bdecfa29345"
+    },
+    {
+      "path": "code/config_files/configure.yaml",
+      "bytes": 3314,
+      "sha256": "2d10fe6a1c887547c898b1665a7056ce4dd4f6125cbab558af73df9f2784a476"
+    },
+    {
+      "path": "code/csrc/selective_scan/reverse_scan.cuh",
+      "bytes": 18428,
+      "sha256": "fae5a379e4795f85eb0edbe046cd2c35d078596322a2492defe6989039c1bb48"
+    },
+    {
+      "path": "code/csrc/selective_scan/selective_scan.cpp",
+      "bytes": 21689,
+      "sha256": "c9cd8b171580a3440a757238aae597a02682d368bfc86e66012197fb35e8176f"
+    },
+    {
+      "path": "code/csrc/selective_scan/selective_scan.h",
+      "bytes": 2771,
+      "sha256": "fd82ff6ac520cc250ecae5fc01a948a7cba33e977dce2a6822064664759511a1"
+    },
+    {
+      "path": "code/csrc/selective_scan/selective_scan_bwd_bf16_complex.cu",
+      "bytes": 395,
+      "sha256": "d3191c1308b455c4576938a656b26a9434bb35e06746077de0dcad262d92a6c9"
+    },
+    {
+      "path": "code/csrc/selective_scan/selective_scan_bwd_bf16_real.cu",
+      "bytes": 391,
+      "sha256": "6c7c3d8fc74d46103f4cc05d273437f451945db5e92f0aba6c25dd7e8a4a59d1"
+    },
+    {
+      "path": "code/csrc/selective_scan/selective_scan_bwd_fp16_complex.cu",
+      "bytes": 391,
+      "sha256": "cf749e40690f9c2131cfe9b23ac42da4446bc747e6fd8f1aed45124d2cd5b74b"
+    },
+    {
+      "path": "code/csrc/selective_scan/selective_scan_bwd_fp16_real.cu",
+      "bytes": 387,
+      "sha256": "ce5a8f9bb9e485be8ca70fec63b084f908598f6a1cdd47d754290f2057ee2f61"
+    },
+    {
+      "path": "code/csrc/selective_scan/selective_scan_bwd_fp32_complex.cu",
+      "bytes": 388,
+      "sha256": "9462ad461cde1bded09a0ef236ae4b070ccb7aadae61e27b78a3dc6e1a5a033d"
+    },
+    {
+      "path": "code/csrc/selective_scan/selective_scan_bwd_fp32_real.cu",
+      "bytes": 384,
+      "sha256": "142e266e024f53f41c65f8f114fbc21b1d873a262a2e9743f9965ba069eda4e9"
+    },
+    {
+      "path": "code/csrc/selective_scan/selective_scan_bwd_kernel.cuh",
+      "bytes": 34955,
+      "sha256": "4aa885e6e06e2263fc995173a3088df85e9be49cfe18ef641d3c795eb191cb11"
+    },
+    {
+      "path": "code/csrc/selective_scan/selective_scan_common.h",
+      "bytes": 9327,
+      "sha256": "e3efa8931564a7d724e1b35af877923aa7c348b8ac1aa15715a514130c531ed0"
+    },
+    {
+      "path": "code/csrc/selective_scan/selective_scan_fwd_bf16.cu",
+      "bytes": 500,
+      "sha256": "a3b0256715f39866274d9c9ef7e9791d2b22c71a5efd451c384ad8211ad2d7b6"
+    },
+    {
+      "path": "code/csrc/selective_scan/selective_scan_fwd_fp16.cu",
+      "bytes": 492,
+      "sha256": "f5b32ea6a10c755032e469754adbfbb554fab562eede31d33d99f746f5991a8c"
+    },
+    {
+      "path": "code/csrc/selective_scan/selective_scan_fwd_fp32.cu",
+      "bytes": 486,
+      "sha256": "2ae10cb46816a25caa9711fd8b0aa9252763cda46f7f1765c11ca29bf57944b1"
+    },
+    {
+      "path": "code/csrc/selective_scan/selective_scan_fwd_kernel.cuh",
+      "bytes": 20661,
+      "sha256": "581b84ccd91833a42aff5abbf354706c25e03ff13ada04129bc964ac8ca7889c"
+    },
+    {
+      "path": "code/csrc/selective_scan/static_switch.h",
+      "bytes": 1278,
+      "sha256": "1eb3ebf9f2f231be1bfad83ad15612031e24980336c0019f2d742bce599f704c"
+    },
+    {
+      "path": "code/csrc/selective_scan/uninitialized_copy.cuh",
+      "bytes": 2828,
+      "sha256": "00138cc4f97dfc0bfb9a8956d54560a5627c61ec0893eebb54cf1e59c3b3a3f8"
+    },
+    {
+      "path": "code/env_wrapper.py",
+      "bytes": 2552,
+      "sha256": "aa7257eb70c6202bb43b2e752f8d7e6c215d04d3a23efbfae4acee1c35258042"
+    },
+    {
+      "path": "code/envs/my_atari.py",
+      "bytes": 7586,
+      "sha256": "92289ee31f55d37357aaba1792f082b5cb3d996b857c3c361fda13b22f1cdee3"
+    },
+    {
+      "path": "code/envs/my_dmc.py",
+      "bytes": 5220,
+      "sha256": "620940fe55f1eba307123989615a84a7a7470741012bc8f75e19d22b94e625f8"
+    },
+    {
+      "path": "code/envs/my_memory_maze.py",
+      "bytes": 2556,
+      "sha256": "dd4d607c205ebac84af545a6f07c74c1e8e889ff2f637ff2da9ba67b7ae58e84"
+    },
+    {
+      "path": "code/envs/parallel.py",
+      "bytes": 6388,
+      "sha256": "4fa41d57d84b1c39a1c9de394ed66e869ded6632a5ee114c00b33e56f8fff678"
+    },
+    {
+      "path": "code/eval.py",
+      "bytes": 9685,
+      "sha256": "d48dbe283453f6161de9d99f6260f3ac350ab067b4585d852c8c48bc73237b52"
+    },
+    {
+      "path": "code/mamba_ssm/__init__.py",
+      "bytes": 399,
+      "sha256": "9632961792e12e1b2c1cf11cb049908e7168f99b427062f09ea341d6082f18b1"
+    },
+    {
+      "path": "code/mamba_ssm/distributed/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "code/mamba_ssm/distributed/distributed_utils.py",
+      "bytes": 5825,
+      "sha256": "aa17326d15edb25b2cb95f4b61a432dfb85a3da3ed925338614303c7d52f9e74"
+    },
+    {
+      "path": "code/mamba_ssm/distributed/tensor_parallel.py",
+      "bytes": 12008,
+      "sha256": "e4569c4fda74a801f4ad560cc9a8b5c046cd3273a5855267ed6eccf38109d8e0"
+    },
+    {
+      "path": "code/mamba_ssm/models/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "code/mamba_ssm/models/config_mamba.py",
+      "bytes": 642,
+      "sha256": "0b9b1b6bf2f2d534ae924cd17bdc503590742b52c0994530818d54c2e8ce9ffa"
+    },
+    {
+      "path": "code/mamba_ssm/models/mixer_seq_simple.py",
+      "bytes": 17116,
+      "sha256": "3b28365a39bd663afe4898591cfd8c6d07a615170936fee71b4a821e692b8938"
+    },
+    {
+      "path": "code/mamba_ssm/modules/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "code/mamba_ssm/modules/block.py",
+      "bytes": 4143,
+      "sha256": "9645b2dd75a6b3e52739bbf83aaf13009074cc51b10ac7318f95f3c12f16c4d4"
+    },
+    {
+      "path": "code/mamba_ssm/modules/mamba2.py",
+      "bytes": 17692,
+      "sha256": "4a7608117c0eb3570e175f12d3bf1cb3b82b7ccff1c3ffccd5106c2fd71127ce"
+    },
+    {
+      "path": "code/mamba_ssm/modules/mamba2_simple.py",
+      "bytes": 7608,
+      "sha256": "61149f49cf58cfaeeeef6476dfb25468ad0260760c1ab240fdae97ec93c170f5"
+    },
+    {
+      "path": "code/mamba_ssm/modules/mamba_simple.py",
+      "bytes": 11710,
+      "sha256": "a17e4c51b582dc0d4d690a649eba521cd0c1ee3dc8f0473a0967cdc9ec0874e3"
+    },
+    {
+      "path": "code/mamba_ssm/modules/mha.py",
+      "bytes": 13392,
+      "sha256": "4244dabb6871742c53b925fce0a5a061ad7072e46430264b70bc225977014bb8"
+    },
+    {
+      "path": "code/mamba_ssm/modules/mlp.py",
+      "bytes": 1861,
+      "sha256": "dadcaf93192c514a8e945644c55a95321af33b54b7267b2160a0d22a24fc3bf9"
+    },
+    {
+      "path": "code/mamba_ssm/modules/ssd_minimal.py",
+      "bytes": 4144,
+      "sha256": "6442a9fe25a6792258df657392ab1fab4dd873ee777d9dd5783cc76030218e07"
+    },
+    {
+      "path": "code/mamba_ssm/ops/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "code/mamba_ssm/ops/selective_scan_interface.py",
+      "bytes": 20025,
+      "sha256": "543edd077f11c80cccd5c5e2f926420d9105fd238d9e8960e53660cfa234dce8"
+    },
+    {
+      "path": "code/mamba_ssm/ops/triton/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "code/mamba_ssm/ops/triton/k_activations.py",
+      "bytes": 5169,
+      "sha256": "855725e832deac34fb5f1646d252fbb2d038e2d8fad14120f89092931b26147e"
+    },
+    {
+      "path": "code/mamba_ssm/ops/triton/layer_norm.py",
+      "bytes": 35966,
+      "sha256": "006fb18f7098fc244a318c899841ad4c1a6ea0f614dfe7a1feb4e2e38185235f"
+    },
+    {
+      "path": "code/mamba_ssm/ops/triton/layernorm_gated.py",
+      "bytes": 17763,
+      "sha256": "eb6252e247b90f1c8a75946efbc1a221e0c4da701b6757ddae49f3495cf7a42f"
+    },
+    {
+      "path": "code/mamba_ssm/ops/triton/selective_state_update.py",
+      "bytes": 11582,
+      "sha256": "4bc67389730c9fd0ad40569b9ee48de88c699bc9612fbc4607eb5d38c1b4a9b9"
+    },
+    {
+      "path": "code/mamba_ssm/ops/triton/softplus.py",
+      "bytes": 328,
+      "sha256": "addcf96f306dd2c9bf1c9ef9feda42381a6e55ad906dd92e220598fcfec7b508"
+    },
+    {
+      "path": "code/mamba_ssm/ops/triton/ssd_bmm.py",
+      "bytes": 13637,
+      "sha256": "2db3c55dd50ac8be8945c5ae3a283e6d1234eb239caa4d96d1dff3fbca86a367"
+    },
+    {
+      "path": "code/mamba_ssm/ops/triton/ssd_chunk_scan.py",
+      "bytes": 105730,
+      "sha256": "7682388cedb83e62baaaf1fe7ec2295777b2a72ede2a384952650de08ddccd08"
+    },
+    {
+      "path": "code/mamba_ssm/ops/triton/ssd_chunk_state.py",
+      "bytes": 56897,
+      "sha256": "dff766d79026e52080d48b675d1db20a1b8bfe1900d6a9a3a3a7753c06128540"
+    },
+    {
+      "path": "code/mamba_ssm/ops/triton/ssd_combined.py",
+      "bytes": 54621,
+      "sha256": "0d7e7bc70682261a4914b842fdf56d9f3ea81f1abd919f9a8a65af83ab407a40"
+    },
+    {
+      "path": "code/mamba_ssm/ops/triton/ssd_state_passing.py",
+      "bytes": 16377,
+      "sha256": "615dc8c5a781db2b0fa34aa1fb848cc7c4355bbeed32fc39ec3361490e11e975"
+    },
+    {
+      "path": "code/mamba_ssm/utils/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "code/mamba_ssm/utils/generation.py",
+      "bytes": 15461,
+      "sha256": "cdffb99343b57e6db0572cdafa50cdd6c042234eaf3d8854602813914bd3e17d"
+    },
+    {
+      "path": "code/mamba_ssm/utils/hf.py",
+      "bytes": 966,
+      "sha256": "aa6f3a349826612bf3b310d209ebe50546bf1b2be9bcee3d5959cabfa7d235f6"
+    },
+    {
+      "path": "code/mamba_ssm/utils/torch.py",
+      "bytes": 676,
+      "sha256": "1c3132a1a747e914874e84b5f300ea80d0297faba6eb9256cb5ac4b3d6413c06"
+    },
+    {
+      "path": "code/ops/BASELINE-PROTOCOL.md",
+      "bytes": 3642,
+      "sha256": "035cc32a38077ed9e9de0e3b9d5522e63d74e2454a2ec5e1f2478532c2507fc1"
+    },
+    {
+      "path": "code/ops/README.zh-CN.md",
+      "bytes": 5643,
+      "sha256": "5fa0c625d3043d80be3e9f593fe1ec44b6632cdb1c4e9d8d3fc910364ef38ec4"
+    },
+    {
+      "path": "code/ops/activate.sh",
+      "bytes": 748,
+      "sha256": "5d8f7bed1fc883e3926f08b50feae7abe10d67aa42535d27d0cd0472f40bd47f"
+    },
+    {
+      "path": "code/ops/bootstrap.sh",
+      "bytes": 3871,
+      "sha256": "ed8a03ab65391854de44638bb8081eb44a03803956feb91217239f3fa381a0c4"
+    },
+    {
+      "path": "code/ops/build_causal_sm120.sh",
+      "bytes": 2104,
+      "sha256": "e14f28d321d7da4b0e5dc650c835cae77283e8d938127e84c8c9aac64309b23f"
+    },
+    {
+      "path": "code/ops/check_run.py",
+      "bytes": 1839,
+      "sha256": "936aa643ffbe8bc1aa0505a801398615aa41f6cdf410cd4b8d3c513a87e82fc8"
+    },
+    {
+      "path": "code/ops/constraints-cu128.txt",
+      "bytes": 266,
+      "sha256": "aa018d4b0ae3f584fdd278422f14dc31fc55f495fbdda690ce1e71c45cafd0dc"
+    },
+    {
+      "path": "code/ops/download_wheel.py",
+      "bytes": 3246,
+      "sha256": "a440fa774bef3cc94b1cc240e4a687538890c157db72a5689573dabcbd49b584"
+    },
+    {
+      "path": "code/ops/launch_boxing.sh",
+      "bytes": 796,
+      "sha256": "6c90759d4358b6c8738046278b04e9e3367c981c49bb0417f3dd68dc5a848922"
+    },
+    {
+      "path": "code/ops/prepare_wheels.py",
+      "bytes": 1594,
+      "sha256": "bb58dec175922276ee8366d8ddc08a80ef0cdfaa15f86a58742cac92d68de505"
+    },
+    {
+      "path": "code/ops/probe.py",
+      "bytes": 2284,
+      "sha256": "75cf13a0a982438b62201e0df575ce476ab5277fb7a5eb5e9b827daf021d5589"
+    },
+    {
+      "path": "code/ops/run_atari100k.py",
+      "bytes": 10166,
+      "sha256": "356e9c9b284f1c95f026061b8766b4999c3113a499008b8b55d5032f0b24169d"
+    },
+    {
+      "path": "code/ops/test_training_protocol.py",
+      "bytes": 1882,
+      "sha256": "3b1d40379b99e684109fa2ee813fa4ede9a11e31caa200e7bb7139b5d773652e"
+    },
+    {
+      "path": "code/ops/validated/20260919-rtx5090/README.md",
+      "bytes": 1719,
+      "sha256": "ba01ac45d560c3cc6c63ea5c17416b99667f3b35a212f84ecebcb16e1e82d8e3"
+    },
+    {
+      "path": "code/ops/validated/20260919-rtx5090/pip-check.txt",
+      "bytes": 30,
+      "sha256": "9261363b733079a641c2e4cc9bc46ffa1d8336945a87f807b6cf68847dbc9b09"
+    },
+    {
+      "path": "code/ops/validated/20260919-rtx5090/tested-commit.txt",
+      "bytes": 41,
+      "sha256": "8d256fba0ad4b619efc792d7e9b0fa01448fa3ffd94aa813de1eb6491555734f"
+    },
+    {
+      "path": "code/ops/validated/20260919-rtx5090/verify.json",
+      "bytes": 1878,
+      "sha256": "7c0e34cf76f5d42cab623bcb96ff18eb8129a6a55dd8727d19975c9c2a6c0418"
+    },
+    {
+      "path": "code/ops/validated/20260919-rtx5090/versions.txt",
+      "bytes": 2504,
+      "sha256": "15e63212fba67ae6f16ab387423f5e1ec4a88f640aa29dab6386f2a0d41c9acf"
+    },
+    {
+      "path": "code/ops/verify_runtime.py",
+      "bytes": 6514,
+      "sha256": "13726c3df321c6bd00e885ea106210760111103fb66c58fda770cd02b6276099"
+    },
+    {
+      "path": "code/ops/wheels-cu128.json",
+      "bytes": 1631,
+      "sha256": "3e847937aec548bef97542ef7f7bcc408f6145e82f108987f4beea8181999b47"
+    },
+    {
+      "path": "code/readme.md",
+      "bytes": 2976,
+      "sha256": "bb77d9420c8023ba3ca4ab422a106d8ffe62544e6d0eff2a2582bad2c4addbf3"
+    },
+    {
+      "path": "code/replay_buffer.py",
+      "bytes": 8611,
+      "sha256": "0eb52ba979a50fd45b8e8ca7b74fdb9d66d977aaed84cd8dde3d22a136028548"
+    },
+    {
+      "path": "code/requirements.txt",
+      "bytes": 540,
+      "sha256": "7fcf6ad25a04f17b8fa887d90b4528b38ca550755aed5824fa02c73e38431bfa"
+    },
+    {
+      "path": "code/sub_models/attention_blocks.py",
+      "bytes": 5809,
+      "sha256": "6b49e94c93b328af183570a8a0031b7f4a27497d436a4078bb635100566262ef"
+    },
+    {
+      "path": "code/sub_models/functions_losses.py",
+      "bytes": 2123,
+      "sha256": "bb7d4b3bdde3ccd6b0d806f0c66b9eba424f31e04d22b01bcd717f8f1d069f13"
+    },
+    {
+      "path": "code/sub_models/laprop.py",
+      "bytes": 4676,
+      "sha256": "cf68d1d442966bac44bc262b5ef28be34014960e833c909b1dd6e77037284d51"
+    },
+    {
+      "path": "code/sub_models/transformer_model.py",
+      "bytes": 4143,
+      "sha256": "b7dcbd81f1f18f1698b8d0a9739f59bcfffbd11430464736ce4cf4f40b575a94"
+    },
+    {
+      "path": "code/sub_models/world_models.py",
+      "bytes": 35681,
+      "sha256": "558d6745b35222c0f2c651f3d1d6f2fe8aa2f18a5920419ff84ec9a9b8a84ccf"
+    },
+    {
+      "path": "code/tools.py",
+      "bytes": 2545,
+      "sha256": "6e776a85c822a0756434a9c751fbaba351a31ad13f26858836e2b734cf8293fa"
+    },
+    {
+      "path": "code/train.py",
+      "bytes": 21211,
+      "sha256": "40156814490ee5536916bc95c4257e8632e8bb9a4971d2531098dc59958be030"
+    },
+    {
+      "path": "code/utils.py",
+      "bytes": 3866,
+      "sha256": "6836448d47ed5142dd20313bde35a0ec701895df7b077381d94778bf00388261"
+    },
+    {
+      "path": "README.txt",
+      "bytes": 496,
+      "sha256": "4884a4efc6304473530ea28a29da4866f5268f811692e75eab73f8e4fdb70741"
+    }
+  ]
+}

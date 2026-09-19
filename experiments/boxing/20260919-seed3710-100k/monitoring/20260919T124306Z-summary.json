@@ -1,0 +1,56 @@
+{
+  "check_time_utc": "2026-09-19T12:43:06.345Z",
+  "classification": "normal_process_progress_with_interim_return_drop",
+  "process_alive": true,
+  "phase": "training",
+  "step": 79300,
+  "previous_step": 59500,
+  "step_delta": 19800,
+  "elapsed_hours": 4.07191415766875,
+  "world_model_loss": 8.551363945007324,
+  "actor_critic_loss": 2.6802561283111572,
+  "evaluation_means": [
+    {
+      "training_step": 10000,
+      "mean": 4.3,
+      "episodes": 10
+    },
+    {
+      "training_step": 20000,
+      "mean": 8.2,
+      "episodes": 10
+    },
+    {
+      "training_step": 30000,
+      "mean": 29.1,
+      "episodes": 10
+    },
+    {
+      "training_step": 40000,
+      "mean": 24.0,
+      "episodes": 10
+    },
+    {
+      "training_step": 50000,
+      "mean": 28.2,
+      "episodes": 10
+    },
+    {
+      "training_step": 60000,
+      "mean": 28.9,
+      "episodes": 10
+    },
+    {
+      "training_step": 70000,
+      "mean": -5.4,
+      "episodes": 10
+    }
+  ],
+  "gpu": "9345 MiB, 92 %",
+  "disk_check_status": "success",
+  "disk_output": "Filesystem      Size  Used Avail Use% Mounted on\r\n/dev/md0         50G   15G   36G  30% /root/autodl-tmp",
+  "expected_latest_checkpoint_step": 78000,
+  "notes": "Process identity matches; status fresh; finite losses; no error marker. Fixed evaluation fell from 28.9 at 60K to -5.4 at 70K. Preserve this negative interim result; not a process failure or justification to change the frozen protocol.",
+  "action": "No changes; finish predefined 100K and report full curve",
+  "user_notification_required": false
+}

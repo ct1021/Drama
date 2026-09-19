@@ -1,0 +1,111 @@
+{
+  "schema": 1,
+  "release_url": "https://github.com/ct1021/Drama/releases/tag/boxing-s3710-100k-20260919",
+  "training_commit": "d4b2182c18bfb7a4d152f2fc76c16435cd0aa16e",
+  "archive": {
+    "filename": "boxing-s3710-100k-d4b2182.tar.gz",
+    "bytes": 141394521,
+    "sha256": "32e8a991c7880b37bccb6d82ef5325351ba911da475c5bfbec7f9dc055fe3ea0",
+    "files": 105,
+    "created_unix": 1789828390.0466363
+  },
+  "parts": [
+    {
+      "index": 0,
+      "name": "boxing-s3710-100k-d4b2182.tar.gz.part000",
+      "bytes": 12582912,
+      "sha256": "854217a313fcffffd0b3b407cf2b8d3a6ff4e1572e4c38f2f6998e9f930969eb",
+      "asset_id": 574926265,
+      "url": "https://github.com/ct1021/Drama/releases/download/boxing-s3710-100k-20260919/boxing-s3710-100k-d4b2182.tar.gz.part000"
+    },
+    {
+      "index": 1,
+      "name": "boxing-s3710-100k-d4b2182.tar.gz.part001",
+      "bytes": 12582912,
+      "sha256": "11a88e68a38a5ae17d8334ef209d6b0db820dc13e8db9c0663bfc3bb64985ab6",
+      "asset_id": 574926272,
+      "url": "https://github.com/ct1021/Drama/releases/download/boxing-s3710-100k-20260919/boxing-s3710-100k-d4b2182.tar.gz.part001"
+    },
+    {
+      "index": 2,
+      "name": "boxing-s3710-100k-d4b2182.tar.gz.part002",
+      "bytes": 12582912,
+      "sha256": "90ca4538a16986aba4466b370b882934dd897af0e08aca7ee32f5e451d211c65",
+      "asset_id": 574926282,
+      "url": "https://github.com/ct1021/Drama/releases/download/boxing-s3710-100k-20260919/boxing-s3710-100k-d4b2182.tar.gz.part002"
+    },
+    {
+      "index": 3,
+      "name": "boxing-s3710-100k-d4b2182.tar.gz.part003",
+      "bytes": 12582912,
+      "sha256": "5bca82aa9f4015866234bdc701e0f948f570f0dc78d3d1bd7c63f1b5890df8f3",
+      "asset_id": 574926281,
+      "url": "https://github.com/ct1021/Drama/releases/download/boxing-s3710-100k-20260919/boxing-s3710-100k-d4b2182.tar.gz.part003"
+    },
+    {
+      "index": 4,
+      "name": "boxing-s3710-100k-d4b2182.tar.gz.part004",
+      "bytes": 12582912,
+      "sha256": "28ca392f140f59d4f8124a7ccf5ce11e1474b3a28fd8bb4d575acd87727f5d5f",
+      "asset_id": 574926280,
+      "url": "https://github.com/ct1021/Drama/releases/download/boxing-s3710-100k-20260919/boxing-s3710-100k-d4b2182.tar.gz.part004"
+    },
+    {
+      "index": 5,
+      "name": "boxing-s3710-100k-d4b2182.tar.gz.part005",
+      "bytes": 12582912,
+      "sha256": "2aa7e7744dc6b38d4c466a092742ea337969644d0b2d3380eb40f7f90e15d057",
+      "asset_id": 574926306,
+      "url": "https://github.com/ct1021/Drama/releases/download/boxing-s3710-100k-20260919/boxing-s3710-100k-d4b2182.tar.gz.part005"
+    },
+    {
+      "index": 6,
+      "name": "boxing-s3710-100k-d4b2182.tar.gz.part006",
+      "bytes": 12582912,
+      "sha256": "2c34406eb345fae7e53ae745d37e5e469a2fe08346d16661bd288537d0cb8bd3",
+      "asset_id": 574926374,
+      "url": "https://github.com/ct1021/Drama/releases/download/boxing-s3710-100k-20260919/boxing-s3710-100k-d4b2182.tar.gz.part006"
+    },
+    {
+      "index": 7,
+      "name": "boxing-s3710-100k-d4b2182.tar.gz.part007",
+      "bytes": 12582912,
+      "sha256": "746c2194857a22a74c327424a3a09ac110c4ff903828716831fdd8896b5b3059",
+      "asset_id": 574926431,
+      "url": "https://github.com/ct1021/Drama/releases/download/boxing-s3710-100k-20260919/boxing-s3710-100k-d4b2182.tar.gz.part007"
+    },
+    {
+      "index": 8,
+      "name": "boxing-s3710-100k-d4b2182.tar.gz.part008",
+      "bytes": 12582912,
+      "sha256": "37450f4d5fb72d011ad80befbb7bd8c3dd31848b81f1e4b1cf3e852388068490",
+      "asset_id": 574926440,
+      "url": "https://github.com/ct1021/Drama/releases/download/boxing-s3710-100k-20260919/boxing-s3710-100k-d4b2182.tar.gz.part008"
+    },
+    {
+      "index": 9,
+      "name": "boxing-s3710-100k-d4b2182.tar.gz.part009",
+      "bytes": 12582912,
+      "sha256": "fbffbcb16a64e0ce342bac40484699190cd2880ebf694baa7388e43520732696",
+      "asset_id": 574926489,
+      "url": "https://github.com/ct1021/Drama/releases/download/boxing-s3710-100k-20260919/boxing-s3710-100k-d4b2182.tar.gz.part009"
+    },
+    {
+      "index": 10,
+      "name": "boxing-s3710-100k-d4b2182.tar.gz.part010",
+      "bytes": 12582912,
+      "sha256": "6ceb3415be97b8a3b10f2c521123ef018f3ab97b779d243b4804904ca67d44fb",
+      "asset_id": 574926503,
+      "url": "https://github.com/ct1021/Drama/releases/download/boxing-s3710-100k-20260919/boxing-s3710-100k-d4b2182.tar.gz.part010"
+    },
+    {
+      "index": 11,
+      "name": "boxing-s3710-100k-d4b2182.tar.gz.part011",
+      "bytes": 2982489,
+      "sha256": "c3661edd9f578613f0aa70f9640a55be3111e59a0b6cc3cee5a5627af6728d1a",
+      "asset_id": 574926572,
+      "url": "https://github.com/ct1021/Drama/releases/download/boxing-s3710-100k-20260919/boxing-s3710-100k-d4b2182.tar.gz.part011"
+    }
+  ],
+  "exact_training_resume": false
+}

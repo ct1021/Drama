@@ -1,0 +1,66 @@
+{
+  "check_time_utc": "2026-09-19T13:43:37.378Z",
+  "classification": "normal_progress_near_completion",
+  "process_alive": true,
+  "phase": "training",
+  "step": 98600,
+  "previous_step": 79300,
+  "step_delta": 19300,
+  "elapsed_hours": 5.079120066364606,
+  "world_model_loss": 7.169215679168701,
+  "actor_critic_loss": 2.5898876190185547,
+  "evaluation_means": [
+    {
+      "training_step": 10000,
+      "mean": 4.3,
+      "episodes": 10
+    },
+    {
+      "training_step": 20000,
+      "mean": 8.2,
+      "episodes": 10
+    },
+    {
+      "training_step": 30000,
+      "mean": 29.1,
+      "episodes": 10
+    },
+    {
+      "training_step": 40000,
+      "mean": 24.0,
+      "episodes": 10
+    },
+    {
+      "training_step": 50000,
+      "mean": 28.2,
+      "episodes": 10
+    },
+    {
+      "training_step": 60000,
+      "mean": 28.9,
+      "episodes": 10
+    },
+    {
+      "training_step": 70000,
+      "mean": -5.4,
+      "episodes": 10
+    },
+    {
+      "training_step": 80000,
+      "mean": 22.5,
+      "episodes": 10
+    },
+    {
+      "training_step": 90000,
+      "mean": 24.7,
+      "episodes": 10
+    }
+  ],
+  "gpu": "9345 MiB, 81 %",
+  "disk_check_status": "success",
+  "disk_output": "Filesystem      Size  Used Avail Use% Mounted on\r\n/dev/md0         50G   15G   36G  30% /root/autodl-tmp",
+  "expected_latest_checkpoint_step": 98000,
+  "notes": "Process identity matches; fresh status; finite losses; no error marker. 100K endpoint not yet reached; do not report completion or substitute 90K evaluation.",
+  "action": "No changes; retain requested hourly cadence; archive on confirmed completion",
+  "user_notification_required": false
+}

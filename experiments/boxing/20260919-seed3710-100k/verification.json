@@ -1,0 +1,187 @@
+{
+  "checked_at_utc": "2026-09-19T14:47:46.547104+00:00",
+  "source": "Published GitHub Release downloaded without credentials",
+  "release_url": "https://github.com/ct1021/Drama/releases/tag/boxing-s3710-100k-20260919",
+  "archive_sha256": "32e8a991c7880b37bccb6d82ef5325351ba911da475c5bfbec7f9dc055fe3ea0",
+  "verified_archive_files": 105,
+  "remote_hash_matches": [
+    {
+      "path": "manifest.json",
+      "bytes": 827,
+      "sha256": "a7030e00731c80eb080cbbb3cea17d75d68a35dd419529edc237119bf2b99d0c"
+    },
+    {
+      "path": "config.resolved.json",
+      "bytes": 4330,
+      "sha256": "2fe905c1b4908540acde6596aa3328d87e45748f32c47250900fc57894ec61a3"
+    },
+    {
+      "path": "status.json",
+      "bytes": 1486,
+      "sha256": "37459dac21b00952ae614c49ceb3e35d3fec3a996aafabae8048e28c15e8f247"
+    },
+    {
+      "path": "evaluations.jsonl",
+      "bytes": 3467,
+      "sha256": "b7713f778458b034a2c31c0a3c1fa73fc783d025cbffb100c6ecfc9d5d606f90"
+    },
+    {
+      "path": "metrics.jsonl",
+      "bytes": 150719195,
+      "sha256": "986f535ce0a555b9d812d438c4cf8d83f3047db937458ec65b5ab018c29e5c30"
+    },
+    {
+      "path": "console.log",
+      "bytes": 103622,
+      "sha256": "a72bdee0edaebbada122c3b2796b312d5161604ab1ef709ea70d8ab25bf9f8cf"
+    },
+    {
+      "path": "ckpt/world_model-final.pth",
+      "bytes": 87742001,
+      "sha256": "dca730ef06a75a7c863d42f5e4e7819128e7ad4ea98d95b202a1073151e5e132"
+    },
+    {
+      "path": "ckpt/agent-final.pth",
+      "bytes": 13690652,
+      "sha256": "41ad2e0dfa7a4011c9134841e50f132e1cd9a8db8843d3388d47a6ddc9ec3457"
+    }
+  ],
+  "metrics": {
+    "rows": 1386075,
+    "min_step": 1033,
+    "max_step": 100000,
+    "nonfinite_values": 0,
+    "tag_counts": {
+      "WorldModel/reconstruction_loss": 98968,
+      "WorldModel/reward_loss": 98968,
+      "WorldModel/termination_loss": 98968,
+      "WorldModel/dynamics_loss": 98968,
+      "WorldModel/dynamics_real_kl_div": 98968,
+      "WorldModel/representation_loss": 98968,
+      "WorldModel/representation_real_kl_div": 98968,
+      "WorldModel/total_loss": 98968,
+      "ActorCritic/policy_loss": 98968,
+      "ActorCritic/value_loss": 98968,
+      "ActorCritic/entropy_loss": 98968,
+      "ActorCritic/S": 98968,
+      "ActorCritic/norm_ratio": 98968,
+      "ActorCritic/total_loss": 98968,
+      "episode/score": 57,
+      "episode/length": 57,
+      "episode/normalised score": 57,
+      "benchmark/normalised PPO score": 57,
+      "benchmark/normalised SimPLe score": 57,
+      "benchmark/normalised SPR score": 57,
+      "benchmark/normalised TWM score": 57,
+      "benchmark/normalised IRIS score": 57,
+      "benchmark/normalised Dreamer score": 57,
+      "evaluate/score": 10
+    },
+    "last_values": {
+      "WorldModel/reconstruction_loss": {
+        "step": 100000,
+        "value": 2.5481247901916504
+      },
+      "WorldModel/reward_loss": {
+        "step": 100000,
+        "value": 0.041878510266542435
+      },
+      "WorldModel/termination_loss": {
+        "step": 100000,
+        "value": 0.00011344603262841702
+      },
+      "WorldModel/dynamics_loss": {
+        "step": 100000,
+        "value": 4.381423473358154
+      },
+      "WorldModel/dynamics_real_kl_div": {
+        "step": 100000,
+        "value": 4.381423473358154
+      },
+      "WorldModel/representation_loss": {
+        "step": 100000,
+        "value": 4.381423473358154
+      },
+      "WorldModel/representation_real_kl_div": {
+        "step": 100000,
+        "value": 4.381423473358154
+      },
+      "WorldModel/total_loss": {
+        "step": 100000,
+        "value": 7.409682750701904
+      },
+      "ActorCritic/policy_loss": {
+        "step": 100000,
+        "value": -9.476435661781579e-05
+      },
+      "ActorCritic/value_loss": {
+        "step": 100000,
+        "value": 1.2197508811950684
+      },
+      "ActorCritic/entropy_loss": {
+        "step": 100000,
+        "value": -0.06330905854701996
+      },
+      "ActorCritic/S": {
+        "step": 100000,
+        "value": 3.696033477783203
+      },
+      "ActorCritic/norm_ratio": {
+        "step": 100000,
+        "value": 3.696033477783203
+      },
+      "ActorCritic/total_loss": {
+        "step": 100000,
+        "value": 2.4412648677825928
+      },
+      "episode/score": {
+        "step": 99434,
+        "value": 53.0
+      },
+      "episode/length": {
+        "step": 99434,
+        "value": 1339.0
+      },
+      "episode/normalised score": {
+        "step": 99434,
+        "value": 4.416666666666667
+      },
+      "benchmark/normalised PPO score": {
+        "step": 99434,
+        "value": 17.666666666666668
+      },
+      "benchmark/normalised SimPLe score": {
+        "step": 99434,
+        "value": 6.625
+      },
+      "benchmark/normalised SPR score": {
+        "step": 99434,
+        "value": 1.4722222222222223
+      },
+      "benchmark/normalised TWM score": {
+        "step": 99434,
+        "value": 0.6794871794871795
+      },
+      "benchmark/normalised IRIS score": {
+        "step": 99434,
+        "value": 0.7571428571428571
+      },
+      "benchmark/normalised Dreamer score": {
+        "step": 99434,
+        "value": 0.6463414634146342
+      },
+      "evaluate/score": {
+        "step": 100000,
+        "value": 32.9
+      }
+    }
+  },
+  "evaluation_points": 10,
+  "evaluation_episodes": 100,
+  "final_mean": 32.9,
+  "restored_on": "Windows fresh directory",
+  "new_gpu_environment_tested": false,
+  "exact_training_resume": false,
+  "training_source_files_matched_git_commit": 92,
+  "portable_tool_tests": "5 offline tests passed: round trip, overwrite refusal, archive corruption, file corruption, traversal/symlink rejection, cached part reuse"
+}

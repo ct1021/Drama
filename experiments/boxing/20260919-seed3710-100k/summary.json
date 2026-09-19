@@ -1,0 +1,28 @@
+{
+  "completed": true,
+  "training_interactions": 100000,
+  "game": "Boxing",
+  "training_seed": 3710,
+  "world_model_parameters": 21925667,
+  "final_mean": 32.9,
+  "final_episode_sample_sd": 18.905907366041266,
+  "final_episode_median": 34.0,
+  "final_episode_returns": [
+    7.0,
+    32.0,
+    35.0,
+    58.0,
+    33.0,
+    30.0,
+    -2.0,
+    45.0,
+    35.0,
+    56.0
+  ],
+  "elapsed_hours": 5.158468466268645,
+  "peak_torch_allocated_GiB": 5.876243591308594,
+  "estimated_training_window_cny": 14.856389182853697,
+  "started_local": "2026-09-19T16:39:20.255942+08:00",
+  "completed_local": "2026-09-19T21:48:50.742420+08:00",
+  "scope": "single-game single-seed public-config baseline; not architecture evidence"
+}

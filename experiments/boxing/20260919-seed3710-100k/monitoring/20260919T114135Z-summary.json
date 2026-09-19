@@ -1,0 +1,47 @@
+{
+  "check_time_utc": "2026-09-19T11:41:35.421Z",
+  "classification": "normal_progress",
+  "process_alive": true,
+  "phase": "training",
+  "step": 59500,
+  "previous_step": 40000,
+  "step_delta": 19500,
+  "elapsed_hours": 3.0464700860447356,
+  "world_model_loss": 7.069757461547852,
+  "actor_critic_loss": 2.6816635131835938,
+  "evaluation_means": [
+    {
+      "training_step": 10000,
+      "mean": 4.3,
+      "episodes": 10
+    },
+    {
+      "training_step": 20000,
+      "mean": 8.2,
+      "episodes": 10
+    },
+    {
+      "training_step": 30000,
+      "mean": 29.1,
+      "episodes": 10
+    },
+    {
+      "training_step": 40000,
+      "mean": 24.0,
+      "episodes": 10
+    },
+    {
+      "training_step": 50000,
+      "mean": 28.2,
+      "episodes": 10
+    }
+  ],
+  "gpu": "9345 MiB, 82 %",
+  "free_disk_GiB_approx": null,
+  "expected_latest_checkpoint_step": 58000,
+  "notes": "Process identity matches; recent status and checkpoints; finite losses; no error marker in console tail. Evaluation changes are interim baseline results, not an architecture finding. Disk query unavailable; do not infer training failure from SSH error.",
+  "action": "No changes; keep hourly monitoring active",
+  "user_notification_required": false,
+  "disk_check_retry": true,
+  "disk_check_status": "unavailable_network_error_after_retry"
+}
