@@ -31,7 +31,16 @@ fi
 PYTHON="$ENV_DIR/bin/python"
 CONSTRAINTS="$REPO_DIR/ops/constraints-cu128.txt"
 "$PYTHON" -m pip install --index-url "$PYPI_INDEX" 'pip==25.1.1' 'setuptools==75.8.0' wheel ninja packaging
-"$PYTHON" -m pip install -c "$CONSTRAINTS" torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128
+TORCH_PACKAGES=(torch torchvision torchaudio)
+TORCH_WHEEL="$DATA_DIR/wheels/torch-2.7.0+cu128-cp312-cp312-manylinux_2_28_x86_64.whl"
+TRITON_WHEEL="$DATA_DIR/wheels/triton-3.3.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl"
+if [[ -f "$TORCH_WHEEL" ]]; then
+    TORCH_PACKAGES[0]="$TORCH_WHEEL"
+fi
+if [[ -f "$TRITON_WHEEL" ]]; then
+    TORCH_PACKAGES+=("$TRITON_WHEEL")
+fi
+"$PYTHON" -m pip install -c "$CONSTRAINTS" "${TORCH_PACKAGES[@]}" --index-url https://download.pytorch.org/whl/cu128
 "$PYTHON" -m pip install --index-url "$PYPI_INDEX" -c "$CONSTRAINTS" einops transformers
 "$PYTHON" -m pip install --index-url "$PYPI_INDEX" -c "$CONSTRAINTS" causal-conv1d --no-build-isolation
 "$PYTHON" -m pip install --index-url "$PYPI_INDEX" -c "$CONSTRAINTS" mamba-ssm --no-build-isolation
