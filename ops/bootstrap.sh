@@ -30,6 +30,7 @@ if [[ ! -e "$ENV_DIR" ]]; then
 fi
 PYTHON="$ENV_DIR/bin/python"
 CONSTRAINTS="$REPO_DIR/ops/constraints-cu128.txt"
+"$PYTHON" "$REPO_DIR/ops/prepare_wheels.py" "$DATA_DIR/wheels"
 "$PYTHON" -m pip install --index-url "$PYPI_INDEX" 'pip==25.1.1' 'setuptools==75.8.0' wheel ninja packaging
 # Fetch ordinary Python dependencies through the selected registry; the CUDA
 # index can redirect these files to a slow overseas CDN on some cloud hosts.
@@ -46,8 +47,16 @@ if [[ -f "$TRITON_WHEEL" ]]; then
 fi
 "$PYTHON" -m pip install -c "$CONSTRAINTS" "${TORCH_PACKAGES[@]}" --index-url https://download.pytorch.org/whl/cu128
 "$PYTHON" -m pip install --index-url "$PYPI_INDEX" -c "$CONSTRAINTS" einops transformers
-"$PYTHON" -m pip install --index-url "$PYPI_INDEX" -c "$CONSTRAINTS" causal-conv1d --no-build-isolation
-"$PYTHON" -m pip install --index-url "$PYPI_INDEX" -c "$CONSTRAINTS" mamba-ssm --no-build-isolation
+CAUSAL_PACKAGE=causal-conv1d
+MAMBA_PACKAGE=mamba-ssm
+if [[ -f "$DATA_DIR/wheels/causal_conv1d-1.5.2-cp312-cp312-linux_x86_64.whl" ]]; then
+    CAUSAL_PACKAGE="$DATA_DIR/wheels/causal_conv1d-1.5.2-cp312-cp312-linux_x86_64.whl"
+fi
+if [[ -f "$DATA_DIR/wheels/mamba_ssm-2.2.6.post3-cp312-cp312-linux_x86_64.whl" ]]; then
+    MAMBA_PACKAGE="$DATA_DIR/wheels/mamba_ssm-2.2.6.post3-cp312-cp312-linux_x86_64.whl"
+fi
+"$PYTHON" -m pip install --index-url "$PYPI_INDEX" -c "$CONSTRAINTS" "$CAUSAL_PACKAGE" --no-build-isolation
+"$PYTHON" -m pip install --index-url "$PYPI_INDEX" -c "$CONSTRAINTS" "$MAMBA_PACKAGE" --no-build-isolation
 "$PYTHON" -m pip install --index-url "$PYPI_INDEX" -c "$CONSTRAINTS" -r "$REPO_DIR/requirements.txt"
 "$PYTHON" -m pip check
 "$PYTHON" -m pip freeze > "$DATA_DIR/reports/freeze-$STAMP.txt"
