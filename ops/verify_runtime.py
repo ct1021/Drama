@@ -61,18 +61,20 @@ def main():
         assert torch.isfinite(y).all() and torch.isfinite(x.grad).all()
         model.eval()
         with torch.no_grad():
-            seq = x.detach()[:, :8].contiguous()
+            seq = x.detach()[:, :16].contiguous()
             full = model(seq)
-            cache = InferenceParams(max_seqlen=8, max_batch_size=2)
+            cache = InferenceParams(max_seqlen=16, max_batch_size=2)
             assert cache.key_value_dtype is None
-            explicit_cache = InferenceParams(max_seqlen=8, max_batch_size=2,
+            explicit_cache = InferenceParams(max_seqlen=16, max_batch_size=2,
                                             key_value_dtype=torch.float32)
-            explicit_first = model(seq[:, :1].contiguous(),
+            # Match Drama's 8-frame context before single-step cached decoding.
+            # A cold one-token prefill violates this convolution's stride alignment.
+            explicit_first = model(seq[:, :8].contiguous(),
                                    inference_params=explicit_cache)
-            torch.testing.assert_close(full[:, :1], explicit_first,
+            torch.testing.assert_close(full[:, :8], explicit_first,
                                        rtol=1e-3, atol=1e-3)
-            pieces = []
-            for step in range(8):
+            pieces = [model(seq[:, :8].contiguous(), inference_params=cache)]
+            for step in range(8, 16):
                 cache.seqlen_offset = step
                 pieces.append(model(seq[:, step:step+1].contiguous(),
                                     inference_params=cache))
@@ -80,6 +82,8 @@ def main():
             torch.testing.assert_close(full, incremental, rtol=1e-3, atol=1e-3)
         torch.cuda.synchronize()
         return {"module": str(Path(mamba_ssm.__file__).relative_to(ROOT)),
+                "prefill_length": 8, "cached_steps": 8,
+                "cold_single_token_prefill_supported": False,
                 "max_cache_error": float((full-incremental).abs().max())}
 
     def imports_check():
