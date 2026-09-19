@@ -1,5 +1,6 @@
 """GPU/environment checks only: no optimizer, policy updates, or training loop."""
 import importlib
+from contextlib import redirect_stdout
 import json
 import os
 from pathlib import Path
@@ -17,7 +18,8 @@ def main():
 
     def check(name, test):
         try:
-            detail = test()
+            with redirect_stdout(sys.stderr):
+                detail = test()
             results.append({"check": name, "ok": True, "detail": detail})
         except Exception:
             results.append({"check": name, "ok": False,

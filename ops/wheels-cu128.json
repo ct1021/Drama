@@ -1,0 +1,15 @@
+{
+  "scope": "Official Linux x86_64 CPython 3.12 wheels for torch 2.7, CXX11 ABI true; execution still requires runtime verification",
+  "assets": [
+    {
+      "filename": "causal_conv1d-1.5.2+cu12torch2.7cxx11abiTRUE-cp312-cp312-linux_x86_64.whl",
+      "url": "https://github.com/Dao-AILab/causal-conv1d/releases/download/v1.5.2/causal_conv1d-1.5.2%2Bcu12torch2.7cxx11abiTRUE-cp312-cp312-linux_x86_64.whl",
+      "sha256": "9f5426f16f8838afc7cc6a914471321f592444efbc7b2584d51a10c0c49bb71a"
+    },
+    {
+      "filename": "mamba_ssm-2.2.6.post3+cu12torch2.7cxx11abiTRUE-cp312-cp312-linux_x86_64.whl",
+      "url": "https://github.com/state-spaces/mamba/releases/download/v2.2.6.post3/mamba_ssm-2.2.6.post3%2Bcu12torch2.7cxx11abiTRUE-cp312-cp312-linux_x86_64.whl",
+      "sha256": "67d7df68dc9cf15007c6abc9da5e650fdf28be3615398ffc8c56d3390b7e2714"
+    }
+  ]
+}
