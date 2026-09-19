@@ -1,5 +1,5 @@
 import os
-os.environ["CUDA_VISIBLE_DEVICES"] = "1"
+os.environ.setdefault("CUDA_VISIBLE_DEVICES", "0")
 os.environ["MUJOCO_GL"] = "osmesa"
 os.environ["PYOPENGL_PLATFORM"] = "osmesa"
 import gymnasium
@@ -124,6 +124,8 @@ def joint_train_world_model_agent(config, logdir,
         is_discrete = False
     else:
         assert ValueError(f'Unknown environment name: {config.BasicSettings.Env_name}')
+    is_discrete = hasattr(env.action_space, 'n')
+    env.action_space.seed(config.BasicSettings.Seed)
     print("Current env: " + colorama.Fore.YELLOW + f"{config.BasicSettings.Env_name}" + colorama.Style.RESET_ALL)
 
     # Benchmark handling (only for Atari)
@@ -140,7 +142,7 @@ def joint_train_world_model_agent(config, logdir,
     context_action = deque(maxlen=config.JointTrainAgent.RealityContextLength)
 
     # sample and train
-    for total_steps in tqdm(range(config.JointTrainAgent.SampleMaxSteps // config.JointTrainAgent.NumEnvs), desc='Training'):
+    for total_steps in tqdm(range(1, config.JointTrainAgent.SampleMaxSteps // config.JointTrainAgent.NumEnvs + 1), desc='Training', mininterval=30):
         # sample part >>>
         if replay_buffer.ready('world_model'):
             world_model.eval()
@@ -192,7 +194,7 @@ def joint_train_world_model_agent(config, logdir,
                         logger.log(f"benchmark/normalised {algorithm} score", normalized_score, global_step=total_steps)
             
             sum_reward = 0
-            ob, info = env.reset()
+            current_ob, info = env.reset()
             context_obs.clear()
             context_action.clear()
 
@@ -211,7 +213,7 @@ def joint_train_world_model_agent(config, logdir,
 
 
         if replay_buffer.ready('behaviour') and total_steps % (config.JointTrainAgent.TrainAgentEverySteps // config.JointTrainAgent.NumEnvs) == 0 and total_steps <= config.JointTrainAgent.FreezeBehaviourAfterSteps:
-            log_video = total_steps % (config.JointTrainAgent.SaveEverySteps // config.JointTrainAgent.NumEnvs) == 0
+            log_video = total_steps % (config.JointTrainAgent.SaveEverySteps // config.JointTrainAgent.NumEnvs) == 0 and getattr(logger, 'enable_video', True)
 
             imagine_latent, agent_action, old_logits, context_latent, context_reward, context_termination, imagine_reward, imagine_termination = world_model_imagine_data(
                 replay_buffer=replay_buffer,
@@ -238,12 +240,15 @@ def joint_train_world_model_agent(config, logdir,
                 global_step=total_steps
             )
 
-        if config.Evaluate.DuringTraining and total_steps % (config.Evaluate.EverySteps // config.JointTrainAgent.NumEnvs) == 0:
+        if config.Evaluate.DuringTraining and (total_steps % (config.Evaluate.EverySteps // config.JointTrainAgent.NumEnvs) == 0 or total_steps == config.JointTrainAgent.SampleMaxSteps):
             _ = eval_episodes(config, world_model, agent, logger, total_steps)
         if config.JointTrainAgent.SaveModels and total_steps % (config.JointTrainAgent.SaveEverySteps // config.JointTrainAgent.NumEnvs) == 0:
             print(colorama.Fore.GREEN + f"Saving model at total steps {total_steps}" + colorama.Style.RESET_ALL)
             torch.save(world_model.state_dict(), f"{logdir}/ckpt/world_model.pth")
             torch.save(agent.state_dict(), f"{logdir}/ckpt/agent.pth")
+        if hasattr(logger, 'on_step'):
+            logger.on_step(total_steps)
+    env.close()
 
 
 
