@@ -15,6 +15,9 @@ export TORCH_EXTENSIONS_DIR="$DATA_DIR/cache/torch"
 export TRITON_CACHE_DIR="$DATA_DIR/cache/triton"
 export MAX_JOBS="${MAX_JOBS:-8}"
 export WANDB_MODE=disabled
+if [[ -d "$DATA_DIR/wheels" ]]; then
+    export PIP_FIND_LINKS="$DATA_DIR/wheels"
+fi
 STAMP="$(date -u +%Y%m%dT%H%M%SZ)"
 exec > >(tee "$DATA_DIR/reports/setup-$STAMP.log") 2>&1
 if [[ -e "$ENV_DIR" && ! -f "$ENV_DIR/.drama-portable-env" ]]; then

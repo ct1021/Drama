@@ -8,6 +8,7 @@
 - 本地 `.ssh/drama-research/`：私钥、实例地址、端口、预算与主机指纹，不上传 Git。
 - 服务器数据盘：虚拟环境、编译缓存、训练数据和检查点。
 - 每台服务器单独保留验收记录；换服务器后重新验证，不凭镜像名称判断成功。
+- GitHub 网络不可达时，可从可信本机传输代码和项目官方 Release wheel；源码仍按提交同步，wheel 留在服务器数据盘 `wheels/`，不提交二进制或凭据。
 
 ## 换服务器流程
 
@@ -16,6 +17,10 @@
 3. 根据检查结果，在数据盘创建独立环境。候选脚本是 `bash ops/bootstrap.sh`，遵循上游 README 的 Python 3.12 / PyTorch 2.7.0 cu128 / Mamba 2.2.6.post3 组合；现有镜像环境保留。先完成服务器探测，再运行安装。`DRAMA_DATA_DIR`、`DRAMA_ENV_DIR`、`DRAMA_BASE_PYTHON` 可覆盖默认路径。
 4. 在仓库根目录执行 `python ops/verify_runtime.py`。它只检查 GPU 扩展前反向、递归缓存、Drama 模块和 Atari 环境，不更新策略、不生成研究回报。
 5. 保存 `pip freeze`、`pip check`、代码提交与验收输出；只有实测通过的组合才标记为已验证。
+
+普通终端使用 `source ops/activate.sh` 激活环境。无人值守 SSH 的初始 PATH 可能不含镜像 Python/CUDA，可在安装前显式设置 `PATH=/root/miniconda3/bin:/usr/local/cuda-12.8/bin:$PATH` 和 `CUDA_HOME=/usr/local/cuda-12.8`。这些是本次 AutoDL 镜像实际核验路径，更换平台时先重新检查。
+
+国内服务器可通过 `DRAMA_PYPI_INDEX=https://pypi.tuna.tsinghua.edu.cn/simple` 使用清华镜像；默认 PyPI 官方源，PyTorch CUDA 包仍从 PyTorch 官方索引安装。源地址与实际版本应随验收记录保存。
 
 ## 当前状态
 

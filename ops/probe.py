@@ -2,6 +2,7 @@
 import importlib.metadata as metadata
 import json
 import os
+from pathlib import Path
 import platform
 import shutil
 import subprocess
@@ -32,9 +33,15 @@ def main():
             usage = shutil.disk_usage(path)
             disks[path] = {"total_GiB": round(usage.total / 2**30, 2),
                            "free_GiB": round(usage.free / 2**30, 2)}
+    limits = {}
+    for name in ("memory.max", "cpu.max", "cpuset.cpus.effective"):
+        path = Path("/sys/fs/cgroup") / name
+        if path.is_file():
+            limits[name] = path.read_text().strip()
     result = {
         "python": sys.version, "executable": sys.executable,
         "platform": platform.platform(), "cpu_count": os.cpu_count(),
+        "container_limits": limits,
         "packages": packages, "disks": disks,
         "gpu": command(["nvidia-smi", "--query-gpu=name,memory.total,driver_version",
                         "--format=csv,noheader"]),
