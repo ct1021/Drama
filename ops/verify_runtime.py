@@ -53,9 +53,10 @@ def main():
         from mamba_ssm import Mamba2, InferenceParams
         assert Path(mamba_ssm.__file__).resolve().is_relative_to(ROOT)
         torch.manual_seed(0)
-        model = Mamba2(d_model=128, d_state=16, layer_idx=0,
+        # Eight heads keep the combined projection stride aligned to 8 elements.
+        model = Mamba2(d_model=256, d_state=16, layer_idx=0,
                        device="cuda", dtype=torch.float32)
-        x = torch.randn(2, 128, 128, device="cuda", requires_grad=True)
+        x = torch.randn(2, 128, 256, device="cuda", requires_grad=True)
         y = model(x)
         y.square().mean().backward()
         assert torch.isfinite(y).all() and torch.isfinite(x.grad).all()
@@ -68,7 +69,6 @@ def main():
             explicit_cache = InferenceParams(max_seqlen=16, max_batch_size=2,
                                             key_value_dtype=torch.float32)
             # Match Drama's 8-frame context before single-step cached decoding.
-            # A cold one-token prefill violates this convolution's stride alignment.
             explicit_first = model(seq[:, :8].contiguous(),
                                    inference_params=explicit_cache)
             torch.testing.assert_close(full[:, :8], explicit_first,
@@ -83,7 +83,7 @@ def main():
         torch.cuda.synchronize()
         return {"module": str(Path(mamba_ssm.__file__).relative_to(ROOT)),
                 "prefill_length": 8, "cached_steps": 8,
-                "cold_single_token_prefill_supported": False,
+                "d_model": 256, "dtype": "float32",
                 "max_cache_error": float((full-incremental).abs().max())}
 
     def imports_check():
