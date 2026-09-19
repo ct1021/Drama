@@ -31,6 +31,10 @@ fi
 PYTHON="$ENV_DIR/bin/python"
 CONSTRAINTS="$REPO_DIR/ops/constraints-cu128.txt"
 "$PYTHON" -m pip install --index-url "$PYPI_INDEX" 'pip==25.1.1' 'setuptools==75.8.0' wheel ninja packaging
+# Fetch ordinary Python dependencies through the selected registry; the CUDA
+# index can redirect these files to a slow overseas CDN on some cloud hosts.
+"$PYTHON" -m pip install --index-url "$PYPI_INDEX" -c "$CONSTRAINTS" \
+    filelock typing-extensions sympy networkx jinja2 fsspec numpy pillow mpmath MarkupSafe
 TORCH_PACKAGES=(torch torchvision torchaudio)
 TORCH_WHEEL="$DATA_DIR/wheels/torch-2.7.0+cu128-cp312-cp312-manylinux_2_28_x86_64.whl"
 TRITON_WHEEL="$DATA_DIR/wheels/triton-3.3.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl"
