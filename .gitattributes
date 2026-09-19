@@ -1,0 +1,4 @@
+ops/*.sh text eol=lf
+ops/*.py text eol=lf
+ops/*.txt text eol=lf
+ops/*.md text eol=lf
