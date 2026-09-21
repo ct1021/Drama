@@ -1,0 +1,78 @@
+{
+  "archive_sha256": "9ee2daccf91c197b178d6ba7fc557177055ff296a542ce05c1df8450323f58df",
+  "verified_files": 145,
+  "training_commit": "c2a8106e82cd0ca577d3f1527061ddbabb4473f6",
+  "exact_training_resume": false,
+  "destination": "C:\\Users\\CT1021\\Documents\\Codex\\2026-08-09\\2026-08-10\\research-reset-20260917\\environment-clone-20260921\\migration\\restored-from-github",
+  "installed_packages": false,
+  "started_training": false,
+  "metrics_rows": 1386066,
+  "nonfinite_values": 0,
+  "metric_step_range": [
+    1033,
+    100000
+  ],
+  "evaluations": 10,
+  "evaluation_episodes": 100,
+  "actual_interactions": 100000,
+  "elapsed_hours": 4.871083541446262,
+  "peak_torch_allocated_GiB": 5.521152019500732,
+  "original_experiment_files": [
+    {
+      "path": "experiment/ckpt/agent-final.pth",
+      "bytes": 13690652,
+      "sha256": "2fa9e6b16a4278c27af3355032f0b3c276d89b28be15be84b2ad24a60c8c337c"
+    },
+    {
+      "path": "experiment/ckpt/agent.pth",
+      "bytes": 13688370,
+      "sha256": "b094ee80350b0a71ba8c21748fce126b4d145b7265e4b105c104a78b35a0e96a"
+    },
+    {
+      "path": "experiment/ckpt/world_model-final.pth",
+      "bytes": 28690331,
+      "sha256": "8584ee409afd180a85ed83fb889994a8f9207d19b4b61343e4cc6e62579924f4"
+    },
+    {
+      "path": "experiment/ckpt/world_model.pth",
+      "bytes": 28689647,
+      "sha256": "2473e16a36def1ccce4f6ac6122c72477abe2ffeb1c5ed4296291194e9b02a59"
+    },
+    {
+      "path": "experiment/config.resolved.json",
+      "bytes": 4355,
+      "sha256": "8b1d171b494a175cc4caffe58414bc97b633603b9df4363b1b0f34cadeb7adc2"
+    },
+    {
+      "path": "experiment/console.log",
+      "bytes": 98546,
+      "sha256": "400ff9bbdb68db78dc09ed771fcaa9178586d954db5827812e712f27d15059ff"
+    },
+    {
+      "path": "experiment/evaluations.jsonl",
+      "bytes": 3480,
+      "sha256": "1fc0d30a840fd59a128d1784cdb8b36a80fa77fcc7c065cd520cf69094362f1e"
+    },
+    {
+      "path": "experiment/launch.pid",
+      "bytes": 5,
+      "sha256": "851d8d9cabf0b4e6df6222f343cdbfd859e0d0b64c7ec34d4186aaaade0cf5e5"
+    },
+    {
+      "path": "experiment/manifest.json",
+      "bytes": 930,
+      "sha256": "87c42979f0faccde083c341b2604646f4b821a16aef768fcc14b4c997371b67f"
+    },
+    {
+      "path": "experiment/metrics.jsonl",
+      "bytes": 150845065,
+      "sha256": "4ccf9838ce60b1dab8c751b3ed98b1379c8c2b35cceb9505738cceaae575e799"
+    },
+    {
+      "path": "experiment/status.json",
+      "bytes": 1465,
+      "sha256": "3398dac40cba53f123a144489077d79d6b9acc4c7570a72becc2718365d06821"
+    }
+  ],
+  "public_download": true
+}

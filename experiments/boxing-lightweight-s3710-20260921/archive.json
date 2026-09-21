@@ -1,0 +1,94 @@
+{
+  "schema": 1,
+  "training_commit": "c2a8106e82cd0ca577d3f1527061ddbabb4473f6",
+  "archive": {
+    "filename": "boxing-lightweight-s3710-100k-c2a8106.tar.gz",
+    "bytes": 125198729,
+    "sha256": "9ee2daccf91c197b178d6ba7fc557177055ff296a542ce05c1df8450323f58df",
+    "files": 145,
+    "created_unix": 1789976507.1135366
+  },
+  "parts": [
+    {
+      "index": 0,
+      "name": "boxing-lightweight-s3710-100k-c2a8106.tar.gz.part000",
+      "bytes": 12582912,
+      "sha256": "c78027a8d4cb9daa421d1d62325a9c1c45c2fe9955faf938ff95cff490aee191",
+      "asset_id": 578526955,
+      "url": "https://github.com/ct1021/Drama/releases/download/boxing-lightweight-s3710-100k-20260921/boxing-lightweight-s3710-100k-c2a8106.tar.gz.part000"
+    },
+    {
+      "index": 1,
+      "name": "boxing-lightweight-s3710-100k-c2a8106.tar.gz.part001",
+      "bytes": 12582912,
+      "sha256": "d7504157153d208de0905077dc8da8ca81b623c86f6bbe9a8ed77c7de506dd53",
+      "asset_id": 578526951,
+      "url": "https://github.com/ct1021/Drama/releases/download/boxing-lightweight-s3710-100k-20260921/boxing-lightweight-s3710-100k-c2a8106.tar.gz.part001"
+    },
+    {
+      "index": 2,
+      "name": "boxing-lightweight-s3710-100k-c2a8106.tar.gz.part002",
+      "bytes": 12582912,
+      "sha256": "afbe55fb53fe2383659e65212d73a12b9aaebabc3658c4d7a668ae3f2c8ccb08",
+      "asset_id": 578526956,
+      "url": "https://github.com/ct1021/Drama/releases/download/boxing-lightweight-s3710-100k-20260921/boxing-lightweight-s3710-100k-c2a8106.tar.gz.part002"
+    },
+    {
+      "index": 3,
+      "name": "boxing-lightweight-s3710-100k-c2a8106.tar.gz.part003",
+      "bytes": 12582912,
+      "sha256": "ffc15e2ab5fa2a3175f1fc4ea466b3a144b0555a6aef5e1c437c2ccef6b955a5",
+      "asset_id": 578526958,
+      "url": "https://github.com/ct1021/Drama/releases/download/boxing-lightweight-s3710-100k-20260921/boxing-lightweight-s3710-100k-c2a8106.tar.gz.part003"
+    },
+    {
+      "index": 4,
+      "name": "boxing-lightweight-s3710-100k-c2a8106.tar.gz.part004",
+      "bytes": 12582912,
+      "sha256": "19afa88ebe3838f53ea6090f0c7886f34c6295cb9b7c8da12c9b719079ad1966",
+      "asset_id": 578527114,
+      "url": "https://github.com/ct1021/Drama/releases/download/boxing-lightweight-s3710-100k-20260921/boxing-lightweight-s3710-100k-c2a8106.tar.gz.part004"
+    },
+    {
+      "index": 5,
+      "name": "boxing-lightweight-s3710-100k-c2a8106.tar.gz.part005",
+      "bytes": 12582912,
+      "sha256": "2345ddbf5d661fb5732014ffbaeb627c255ab40b2ff3a78153d8515ae5c38abb",
+      "asset_id": 578527090,
+      "url": "https://github.com/ct1021/Drama/releases/download/boxing-lightweight-s3710-100k-20260921/boxing-lightweight-s3710-100k-c2a8106.tar.gz.part005"
+    },
+    {
+      "index": 6,
+      "name": "boxing-lightweight-s3710-100k-c2a8106.tar.gz.part006",
+      "bytes": 12582912,
+      "sha256": "054b99ad3b7b841bd02ddebd764dd445ae5daeb4a4917635c0303d8a87f72f57",
+      "asset_id": 578527122,
+      "url": "https://github.com/ct1021/Drama/releases/download/boxing-lightweight-s3710-100k-20260921/boxing-lightweight-s3710-100k-c2a8106.tar.gz.part006"
+    },
+    {
+      "index": 7,
+      "name": "boxing-lightweight-s3710-100k-c2a8106.tar.gz.part007",
+      "bytes": 12582912,
+      "sha256": "d40abafb11f37eb3da0100de805be1bc7808e8c87395ff0584a148fdb2325af2",
+      "asset_id": 578527262,
+      "url": "https://github.com/ct1021/Drama/releases/download/boxing-lightweight-s3710-100k-20260921/boxing-lightweight-s3710-100k-c2a8106.tar.gz.part007"
+    },
+    {
+      "index": 8,
+      "name": "boxing-lightweight-s3710-100k-c2a8106.tar.gz.part008",
+      "bytes": 12582912,
+      "sha256": "14e5d5225c677641f82000cd487f6b12b58c4db2ba46482efbfcbeb1c4e20981",
+      "asset_id": 578527304,
+      "url": "https://github.com/ct1021/Drama/releases/download/boxing-lightweight-s3710-100k-20260921/boxing-lightweight-s3710-100k-c2a8106.tar.gz.part008"
+    },
+    {
+      "index": 9,
+      "name": "boxing-lightweight-s3710-100k-c2a8106.tar.gz.part009",
+      "bytes": 11952521,
+      "sha256": "1b47c24766f175876773d3192aa97e9976202fa3c2da133eee6dbfc7c871a7ff",
+      "asset_id": 578527429,
+      "url": "https://github.com/ct1021/Drama/releases/download/boxing-lightweight-s3710-100k-20260921/boxing-lightweight-s3710-100k-c2a8106.tar.gz.part009"
+    }
+  ],
+  "release_url": "https://github.com/ct1021/Drama/releases/tag/boxing-lightweight-s3710-100k-20260921"
+}
