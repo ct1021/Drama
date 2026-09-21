@@ -1,0 +1,109 @@
+{
+  "checked_unix": 1789981195.9697967,
+  "pair": {
+    "phase": "running",
+    "pid": 15028,
+    "started_unix": 1789981108.5597742,
+    "code_commit": "5829fc831febdbd844506f9d87906e6c0b348cbb",
+    "gate": "/root/autodl-tmp/drama-research-20260919/runs/h1-integration-1800-5829fc8/integration-summary.json",
+    "scope": "exactly two authorized C/D experiments",
+    "runs": [
+      {
+        "profile": "lightweight-readout",
+        "run_dir": "/root/autodl-tmp/drama-research-20260919/runs/boxing-readout-control-s3710-100k-20260921",
+        "phase": "running",
+        "supervisor_pid": 15033
+      },
+      {
+        "profile": "lightweight-routed",
+        "run_dir": "/root/autodl-tmp/drama-research-20260919/runs/boxing-h1-routed-s3710-100k-20260921",
+        "phase": "pending"
+      }
+    ],
+    "automatic_restart": false,
+    "additional_experiments": false,
+    "per_run_cap_hours": 7,
+    "current": 0,
+    "updated_unix": 1789981108.6559443
+  },
+  "runs": [
+    {
+      "checked_unix": 1789981195.8732958,
+      "run_dir": "/root/autodl-tmp/drama-research-20260919/runs/boxing-readout-control-s3710-100k-20260921",
+      "process_alive": true,
+      "status": {
+        "phase": "training",
+        "pid": 15034,
+        "step": 1300,
+        "started_unix": 1789981112.6083586,
+        "updated_unix": 1789981184.497174,
+        "elapsed_hours": 0.019969115455945333,
+        "peak_gpu_GiB": 5.519485950469971,
+        "latest": {
+          "WorldModel/reconstruction_loss": 444.64959716796875,
+          "WorldModel/reward_loss": 0.4122082591056824,
+          "WorldModel/termination_loss": 0.017006320878863335,
+          "WorldModel/dynamics_loss": 3.1781375408172607,
+          "WorldModel/dynamics_real_kl_div": 3.1781375408172607,
+          "WorldModel/representation_loss": 3.1781375408172607,
+          "WorldModel/representation_real_kl_div": 3.1781375408172607,
+          "WorldModel/total_loss": 448.5747375488281,
+          "ActorCritic/policy_loss": -1.6417192220687866,
+          "ActorCritic/value_loss": 4.1858391761779785,
+          "ActorCritic/entropy_loss": -2.890134572982788,
+          "ActorCritic/S": 1.818886399269104,
+          "ActorCritic/norm_ratio": 1.818886399269104,
+          "ActorCritic/total_loss": 6.723676681518555
+        }
+      },
+      "status_age_seconds": 11.37612271308899,
+      "evaluations": [],
+      "checkpoints": [],
+      "gpu": "9006 MiB, 80 %",
+      "console_tail": "A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)\n[Powered by Stella]\n/root/autodl-tmp/drama-research-20260919/candidates/5829fc831febdbd844506f9d87906e6c0b348cbb/sub_models/world_models.py:388: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.\n  self.scaler = torch.cuda.amp.GradScaler(enabled=self.use_amp and config.Models.WorldModel.dtype is not torch.bfloat16)\n/root/autodl-tmp/drama-research-20260919/candidates/5829fc831febdbd844506f9d87906e6c0b348cbb/agents.py:169: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.\n  self.scaler = torch.cuda.amp.GradScaler(enabled=self.use_amp)\nWorld model total parameters: 6,964,995\nDynamic model parameters: 3,743,648\nEncoder parameters: 232,272\nDecoder parameters: 1,281,811\nDiscretisation layer parameters: 1,443,840\nActor parameters: 530,450\nCritic parameters: 1,444,607\nCurrent env: \u001b[33mALE/Boxing-v5\u001b[0m\n\rTraining:   0%|          | 0/100000 [00:00<?, ?it/s]init_imagine_buffer: 1024x16@torch.float32\n\rTraining:   1%|          | 1056/100000 [00:30<46:51, 35.20it/s]\rTraining:   1%|          | 1056/100000 [00:50<46:51, 35.20it/s]\rTraining:   1%|          | 1234/100000 [01:00<1:31:31, 17.98it/s]\rTraining:   1%|          | 1234/100000 [01:10<1:31:31, 17.98it/s]"
+    },
+    {
+      "run_dir": "/root/autodl-tmp/drama-research-20260919/runs/boxing-h1-routed-s3710-100k-20260921",
+      "status": {
+        "phase": "pending",
+        "step": 0
+      },
+      "process_alive": false
+    }
+  ],
+  "disk_free_GiB": 34.297542572021484,
+  "summary": {
+    "pair_phase": "running",
+    "disk_free_GiB": 34.297542572021484,
+    "runs": [
+      {
+        "name": "boxing-readout-control-s3710-100k-20260921",
+        "phase": "training",
+        "step": 1300,
+        "delta": 300,
+        "alive": true,
+        "status_age_seconds": 11.37612271308899,
+        "losses_finite": true,
+        "model_loss": 448.5747375488281,
+        "actor_loss": 6.723676681518555,
+        "latest_eval": null,
+        "gpu": "9006 MiB, 80 %",
+        "errors": []
+      },
+      {
+        "name": "boxing-h1-routed-s3710-100k-20260921",
+        "phase": "pending",
+        "step": 0,
+        "delta": 0,
+        "alive": false,
+        "status_age_seconds": null,
+        "losses_finite": null,
+        "model_loss": null,
+        "actor_loss": null,
+        "latest_eval": null,
+        "gpu": null,
+        "errors": []
+      }
+    ]
+  }
+}

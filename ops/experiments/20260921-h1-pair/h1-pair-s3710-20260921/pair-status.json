@@ -1,0 +1,26 @@
+{
+  "phase": "running",
+  "pid": 15028,
+  "started_unix": 1789981108.5597742,
+  "code_commit": "5829fc831febdbd844506f9d87906e6c0b348cbb",
+  "gate": "/root/autodl-tmp/drama-research-20260919/runs/h1-integration-1800-5829fc8/integration-summary.json",
+  "scope": "exactly two authorized C/D experiments",
+  "runs": [
+    {
+      "profile": "lightweight-readout",
+      "run_dir": "/root/autodl-tmp/drama-research-20260919/runs/boxing-readout-control-s3710-100k-20260921",
+      "phase": "running",
+      "supervisor_pid": 15033
+    },
+    {
+      "profile": "lightweight-routed",
+      "run_dir": "/root/autodl-tmp/drama-research-20260919/runs/boxing-h1-routed-s3710-100k-20260921",
+      "phase": "pending"
+    }
+  ],
+  "automatic_restart": false,
+  "additional_experiments": false,
+  "per_run_cap_hours": 7,
+  "current": 0,
+  "updated_unix": 1789981108.6559443
+}
