@@ -1,0 +1,1 @@
+{"outer_pid": 26997, "commit": "f401807975d9ad050c61f795e09a5b4b7e27f2ef", "launched_unix": 1790002301.174147, "console": "/root/autodl-tmp/drama-research-20260919/exports/B-after-D-console.log", "scope": "one B after successful D, 15m preflight and 7h formal; no GPU work while waiting"}

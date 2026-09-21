@@ -1,0 +1,3 @@
+Preparing worktree (detached HEAD f401807)
+HEAD is now at f401807 Implement-bounded-B-optimization-control-after-D
+{"candidate": "/root/autodl-tmp/drama-research-20260919/candidates/f401807975d9ad050c61f795e09a5b4b7e27f2ef", "commit": "f401807975d9ad050c61f795e09a5b4b7e27f2ef", "cpu_tests_passed": 13, "GPU_work_started": false, "D_phase": "training", "D_step": 22800}
