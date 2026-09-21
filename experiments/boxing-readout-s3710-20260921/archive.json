@@ -1,0 +1,94 @@
+{
+  "schema": 1,
+  "training_commit": "5829fc831febdbd844506f9d87906e6c0b348cbb",
+  "archive": {
+    "filename": "boxing-readout-s3710-100k-5829fc8.tar.gz",
+    "bytes": 124323042,
+    "sha256": "0654ce67c525b35b3fe796f09d43a0a30ac1fd76d48eade0857440e9270a73ce",
+    "files": 173,
+    "created_unix": 1790000339.2588103
+  },
+  "parts": [
+    {
+      "index": 0,
+      "name": "boxing-readout-s3710-100k-5829fc8.tar.gz.part000",
+      "bytes": 12582912,
+      "sha256": "d331cbc37d0e9081aa07e3e6eb31bfff1e16bda09abd5c1a5b0f1778871bf0e7",
+      "asset_id": 579189238,
+      "url": "https://github.com/ct1021/Drama/releases/download/boxing-readout-s3710-100k-20260921/boxing-readout-s3710-100k-5829fc8.tar.gz.part000"
+    },
+    {
+      "index": 1,
+      "name": "boxing-readout-s3710-100k-5829fc8.tar.gz.part001",
+      "bytes": 12582912,
+      "sha256": "a9dc111cd2a5cc28f25cf2fa827c84d1d87968e22f8a1305eb07f68154e4803c",
+      "asset_id": 579189257,
+      "url": "https://github.com/ct1021/Drama/releases/download/boxing-readout-s3710-100k-20260921/boxing-readout-s3710-100k-5829fc8.tar.gz.part001"
+    },
+    {
+      "index": 2,
+      "name": "boxing-readout-s3710-100k-5829fc8.tar.gz.part002",
+      "bytes": 12582912,
+      "sha256": "1994a5835327249e796219869bd917ec375bb04f43744086b599feb73cecd822",
+      "asset_id": 579189201,
+      "url": "https://github.com/ct1021/Drama/releases/download/boxing-readout-s3710-100k-20260921/boxing-readout-s3710-100k-5829fc8.tar.gz.part002"
+    },
+    {
+      "index": 3,
+      "name": "boxing-readout-s3710-100k-5829fc8.tar.gz.part003",
+      "bytes": 12582912,
+      "sha256": "595bda7d6d049f19f550c7f5123c0b0f9bb199c1e57c8f4afe366d2b4e0698ef",
+      "asset_id": 579189198,
+      "url": "https://github.com/ct1021/Drama/releases/download/boxing-readout-s3710-100k-20260921/boxing-readout-s3710-100k-5829fc8.tar.gz.part003"
+    },
+    {
+      "index": 4,
+      "name": "boxing-readout-s3710-100k-5829fc8.tar.gz.part004",
+      "bytes": 12582912,
+      "sha256": "c6dddf48f8d591bb82e54cbb424c91339559318dc337f92048fb08d9447972e8",
+      "asset_id": 579189313,
+      "url": "https://github.com/ct1021/Drama/releases/download/boxing-readout-s3710-100k-20260921/boxing-readout-s3710-100k-5829fc8.tar.gz.part004"
+    },
+    {
+      "index": 5,
+      "name": "boxing-readout-s3710-100k-5829fc8.tar.gz.part005",
+      "bytes": 12582912,
+      "sha256": "e1fb214bd565684931216c3d565e202d197647cc1c9a7b49e2a6ff24ecf0ec50",
+      "asset_id": 579189317,
+      "url": "https://github.com/ct1021/Drama/releases/download/boxing-readout-s3710-100k-20260921/boxing-readout-s3710-100k-5829fc8.tar.gz.part005"
+    },
+    {
+      "index": 6,
+      "name": "boxing-readout-s3710-100k-5829fc8.tar.gz.part006",
+      "bytes": 12582912,
+      "sha256": "3fa58927e8a37ccd98e5233655d45257597a904ad77f2549ee1dedbfe6becb46",
+      "asset_id": 579189350,
+      "url": "https://github.com/ct1021/Drama/releases/download/boxing-readout-s3710-100k-20260921/boxing-readout-s3710-100k-5829fc8.tar.gz.part006"
+    },
+    {
+      "index": 7,
+      "name": "boxing-readout-s3710-100k-5829fc8.tar.gz.part007",
+      "bytes": 12582912,
+      "sha256": "d0c6a76da83fc8b8a6d2f60c66e61223459c57644af870afa1399fc2c50e1e5e",
+      "asset_id": 579189379,
+      "url": "https://github.com/ct1021/Drama/releases/download/boxing-readout-s3710-100k-20260921/boxing-readout-s3710-100k-5829fc8.tar.gz.part007"
+    },
+    {
+      "index": 8,
+      "name": "boxing-readout-s3710-100k-5829fc8.tar.gz.part008",
+      "bytes": 12582912,
+      "sha256": "e582650b6b8cdff18f06786d670658bb407e2231749be4eabcfbdbd1e144f15a",
+      "asset_id": 579189408,
+      "url": "https://github.com/ct1021/Drama/releases/download/boxing-readout-s3710-100k-20260921/boxing-readout-s3710-100k-5829fc8.tar.gz.part008"
+    },
+    {
+      "index": 9,
+      "name": "boxing-readout-s3710-100k-5829fc8.tar.gz.part009",
+      "bytes": 11076834,
+      "sha256": "00639402936d4e18af2594d5bbe5037998a5d30e0b29b77dfb5c99916c5d8657",
+      "asset_id": 579189461,
+      "url": "https://github.com/ct1021/Drama/releases/download/boxing-readout-s3710-100k-20260921/boxing-readout-s3710-100k-5829fc8.tar.gz.part009"
+    }
+  ],
+  "release_url": "https://github.com/ct1021/Drama/releases/tag/boxing-readout-s3710-100k-20260921"
+}
