@@ -75,7 +75,11 @@ def run(profile):
                 assert leak<2e-5 and effect>1e-6,(role,leak,effect)
                 leak_errors.append(leak);private_changes.append(effect)
         _,decision=wm.calc_last_dist_feat(latent,actions)
-        torch.testing.assert_close(decision,full[:,-1:],rtol=2e-3,atol=2e-3)
+        # Match the real-decision call's AMP context, rather than comparing
+        # bfloat16 decisions against the separate float32 cache test.
+        with torch.autocast('cuda',dtype=torch.bfloat16,enabled=wm.use_amp):
+            decision_reference=seq(latent,actions)[:,-1:]
+        torch.testing.assert_close(decision,decision_reference,rtol=2e-3,atol=2e-3)
     cache=seq.allocate_inference_cache(1,24,dtype=torch.float32)
     cache_bytes=sum(t.numel()*t.element_size() for pair in cache.values() for t in pair)
     assert cache_bytes==164864,cache_bytes
