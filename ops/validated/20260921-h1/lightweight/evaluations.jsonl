@@ -1,0 +1,1 @@
+{"training_step": 1800, "seeds": [237100, 237101], "returns": [-38.0, -38.0], "action_counts": [1786, 1786], "mean": -38.0, "seconds": 12.782895803451538, "policy": "greedy", "episodes": 2}

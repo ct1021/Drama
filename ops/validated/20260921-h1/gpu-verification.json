@@ -1,0 +1,131 @@
+{
+  "scope": "GPU engineering checks and synthetic timing; not RL performance",
+  "results": [
+    {
+      "ok": true,
+      "profile": "lightweight",
+      "world_model_parameters": 7161603,
+      "cache_bytes_per_row_float32": 164864,
+      "cache_max_errors": [
+        0.0007560253143310547,
+        0.0007573366165161133
+      ],
+      "private_state_leak_errors": [],
+      "private_state_changed_outputs": [],
+      "optimizer_parameter_coverage": true,
+      "reset_prefill_lengths": [
+        1,
+        8
+      ],
+      "real_decision_matches_sequence": true,
+      "default_cuda_graph": true,
+      "prediction_forward_backward": {
+        "median_seconds": 0.10031067091040313,
+        "samples": [
+          0.09540578699670732,
+          0.09810597915202379,
+          0.10031067091040313,
+          0.10185777908191085,
+          0.1037655989639461
+        ]
+      },
+      "imagination_1024x16": {
+        "median_seconds": 0.038130620028823614,
+        "samples": [
+          0.045605082996189594,
+          0.03811954497359693,
+          0.03804688691161573,
+          0.038193332962691784,
+          0.038130620028823614
+        ]
+      },
+      "optimizer_steps": 0
+    },
+    {
+      "ok": true,
+      "profile": "lightweight-readout",
+      "world_model_parameters": 6964995,
+      "cache_bytes_per_row_float32": 164864,
+      "cache_max_errors": [
+        0.0007560253143310547,
+        0.0007573366165161133
+      ],
+      "private_state_leak_errors": [],
+      "private_state_changed_outputs": [],
+      "optimizer_parameter_coverage": true,
+      "reset_prefill_lengths": [
+        1,
+        8
+      ],
+      "real_decision_matches_sequence": true,
+      "default_cuda_graph": true,
+      "prediction_forward_backward": {
+        "median_seconds": 0.11200543399900198,
+        "samples": [
+          0.11017326102592051,
+          0.11231995490379632,
+          0.11208975408226252,
+          0.1118468358181417,
+          0.11200543399900198
+        ]
+      },
+      "imagination_1024x16": {
+        "median_seconds": 0.0382725577801466,
+        "samples": [
+          0.03822748502716422,
+          0.03826692816801369,
+          0.0382725577801466,
+          0.03827944095246494,
+          0.038295343052595854
+        ]
+      },
+      "optimizer_steps": 0
+    },
+    {
+      "ok": true,
+      "profile": "lightweight-routed",
+      "world_model_parameters": 5762819,
+      "cache_bytes_per_row_float32": 164864,
+      "cache_max_errors": [
+        0.0005022287368774414,
+        0.0005541443824768066
+      ],
+      "private_state_leak_errors": [
+        0.0,
+        0.0
+      ],
+      "private_state_changed_outputs": [
+        0.8935056924819946,
+        1.0185471773147583
+      ],
+      "optimizer_parameter_coverage": true,
+      "reset_prefill_lengths": [
+        1,
+        8
+      ],
+      "real_decision_matches_sequence": true,
+      "default_cuda_graph": true,
+      "prediction_forward_backward": {
+        "median_seconds": 0.12352066906169057,
+        "samples": [
+          0.12359089008532465,
+          0.12346585211344063,
+          0.1233224191237241,
+          0.12352066906169057,
+          0.12353951297700405
+        ]
+      },
+      "imagination_1024x16": {
+        "median_seconds": 0.041835329961031675,
+        "samples": [
+          0.0417767099570483,
+          0.04179374687373638,
+          0.04183548898436129,
+          0.041835329961031675,
+          0.04184169904328883
+        ]
+      },
+      "optimizer_steps": 0
+    }
+  ]
+}

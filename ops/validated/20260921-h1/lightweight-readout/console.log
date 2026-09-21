@@ -1,0 +1,28 @@
+A.L.E: Arcade Learning Environment (version 0.12.1+8a8fafb)
+[Powered by Stella]
+/root/autodl-tmp/drama-research-20260919/candidates/5829fc831febdbd844506f9d87906e6c0b348cbb/sub_models/world_models.py:388: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  self.scaler = torch.cuda.amp.GradScaler(enabled=self.use_amp and config.Models.WorldModel.dtype is not torch.bfloat16)
+/root/autodl-tmp/drama-research-20260919/candidates/5829fc831febdbd844506f9d87906e6c0b348cbb/agents.py:169: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  self.scaler = torch.cuda.amp.GradScaler(enabled=self.use_amp)
+World model total parameters: 6,964,995
+Dynamic model parameters: 3,743,648
+Encoder parameters: 232,272
+Decoder parameters: 1,281,811
+Discretisation layer parameters: 1,443,840
+Actor parameters: 530,450
+Critic parameters: 1,444,607
+Current env: [33mALE/Boxing-v5[0m
+
+Training:   0%|          | 0/1800 [00:00<?, ?it/s]init_imagine_buffer: 1024x16@torch.float32
+
+Training:  59%|█████▊    | 1056/1800 [00:30<00:21, 35.07it/s]
+Training:  59%|█████▊    | 1056/1800 [00:50<00:21, 35.07it/s]
+Training:  68%|██████▊   | 1231/1800 [01:00<00:31, 17.90it/s]
+Training:  68%|██████▊   | 1231/1800 [01:20<00:31, 17.90it/s]
+Training:  78%|███████▊  | 1407/1800 [01:30<00:31, 12.39it/s]
+Training:  78%|███████▊  | 1407/1800 [01:50<00:31, 12.39it/s]
+Training:  88%|████████▊ | 1585/1800 [02:00<00:21,  9.84it/s]
+Training:  88%|████████▊ | 1585/1800 [02:20<00:21,  9.84it/s]
+Training:  98%|█████████▊| 1767/1800 [02:30<00:03,  8.47it/s]EVALUATION {"training_step": 1800, "seeds": [237100, 237101], "returns": [-38.0, -38.0], "action_counts": [1786, 1786], "mean": -38.0, "seconds": 11.800491094589233, "policy": "greedy", "episodes": 2}
+
+Training: 100%|██████████| 1800/1800 [02:47<00:00, 10.74it/s]

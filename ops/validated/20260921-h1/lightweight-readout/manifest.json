@@ -1,0 +1,48 @@
+{
+  "code_commit": "5829fc831febdbd844506f9d87906e6c0b348cbb",
+  "branch": "",
+  "command": [
+    "/root/autodl-tmp/drama-research-20260919/candidates/5829fc831febdbd844506f9d87906e6c0b348cbb/ops/run_atari100k.py",
+    "--profile",
+    "lightweight-readout",
+    "--run-dir",
+    "/root/autodl-tmp/drama-research-20260919/runs/h1-integration-1800-5829fc8/lightweight-readout",
+    "--game",
+    "Boxing",
+    "--seed",
+    "3710",
+    "--steps",
+    "1800",
+    "--eval-episodes",
+    "2",
+    "--max-hours",
+    "0.15"
+  ],
+  "scope": "integration_only",
+  "env": "ALE/Boxing-v5",
+  "seed": 3710,
+  "target_interactions": 1800,
+  "eval_interval": 10000,
+  "eval_episodes": 2,
+  "compile": false,
+  "amp": true,
+  "cuda_graph": true,
+  "profile": "lightweight-readout",
+  "architecture": "C: lightweight AE; shared Mamba2 recurrence; task-restricted prediction readouts",
+  "routing": {
+    "mode": "readout",
+    "widths": [
+      256,
+      128,
+      128
+    ],
+    "bc_groups": 1,
+    "private_bc_dependency": null,
+    "dense_weight_materialization": false,
+    "combined_mamba_kernel": true,
+    "claim": "experimental; not performance validated"
+  },
+  "wall_time_limit_hours": 0.15,
+  "automatic_next_run": false,
+  "checkpoint_scope": "weights only; not exact resumable training state"
+}

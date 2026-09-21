@@ -1,0 +1,110 @@
+[
+  {
+    "profile": "lightweight",
+    "phase": "completed",
+    "step": 1800,
+    "pid": 14096,
+    "elapsed_seconds": 172.7786512374878,
+    "window": [
+      1200,
+      1700
+    ],
+    "seconds_per_interaction": 0.17294501876831056,
+    "peak_gpu_GiB": 5.521152019500732,
+    "evaluations": [
+      {
+        "training_step": 1800,
+        "seeds": [
+          237100,
+          237101
+        ],
+        "returns": [
+          -38.0,
+          -38.0
+        ],
+        "action_counts": [
+          1786,
+          1786
+        ],
+        "mean": -38.0,
+        "seconds": 12.782895803451538,
+        "policy": "greedy",
+        "episodes": 2
+      }
+    ],
+    "code_commit": "5829fc831febdbd844506f9d87906e6c0b348cbb",
+    "time_ratio_vs_A": 1.0
+  },
+  {
+    "profile": "lightweight-readout",
+    "phase": "completed",
+    "step": 1800,
+    "pid": 14365,
+    "elapsed_seconds": 168.11829543113708,
+    "window": [
+      1200,
+      1700
+    ],
+    "seconds_per_interaction": 0.1699539155960083,
+    "peak_gpu_GiB": 5.519665718078613,
+    "evaluations": [
+      {
+        "training_step": 1800,
+        "seeds": [
+          237100,
+          237101
+        ],
+        "returns": [
+          -38.0,
+          -38.0
+        ],
+        "action_counts": [
+          1786,
+          1786
+        ],
+        "mean": -38.0,
+        "seconds": 11.800491094589233,
+        "policy": "greedy",
+        "episodes": 2
+      }
+    ],
+    "code_commit": "5829fc831febdbd844506f9d87906e6c0b348cbb",
+    "time_ratio_vs_A": 0.9827048897181054
+  },
+  {
+    "profile": "lightweight-routed",
+    "phase": "completed",
+    "step": 1800,
+    "pid": 14566,
+    "elapsed_seconds": 172.36529874801636,
+    "window": [
+      1200,
+      1700
+    ],
+    "seconds_per_interaction": 0.17950570726394655,
+    "peak_gpu_GiB": 5.50211763381958,
+    "evaluations": [
+      {
+        "training_step": 1800,
+        "seeds": [
+          237100,
+          237101
+        ],
+        "returns": [
+          -38.0,
+          -38.0
+        ],
+        "action_counts": [
+          1786,
+          1786
+        ],
+        "mean": -38.0,
+        "seconds": 13.440917730331421,
+        "policy": "greedy",
+        "episodes": 2
+      }
+    ],
+    "code_commit": "5829fc831febdbd844506f9d87906e6c0b348cbb",
+    "time_ratio_vs_A": 1.0379351110680162
+  }
+]
