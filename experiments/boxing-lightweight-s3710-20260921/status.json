@@ -1,0 +1,25 @@
+{
+  "phase": "training",
+  "pid": 4119,
+  "step": 1400,
+  "started_unix": 1789958015.4359403,
+  "updated_unix": 1789958105.6878397,
+  "elapsed_hours": 0.025069972078005473,
+  "peak_gpu_GiB": 5.521152019500732,
+  "latest": {
+    "WorldModel/reconstruction_loss": 304.7447509765625,
+    "WorldModel/reward_loss": 0.2988251745700836,
+    "WorldModel/termination_loss": 0.0034423572942614555,
+    "WorldModel/dynamics_loss": 1.0,
+    "WorldModel/dynamics_real_kl_div": 0.9852392077445984,
+    "WorldModel/representation_loss": 1.0,
+    "WorldModel/representation_real_kl_div": 0.9852392077445984,
+    "WorldModel/total_loss": 306.14703369140625,
+    "ActorCritic/policy_loss": -0.8512526154518127,
+    "ActorCritic/value_loss": 2.9264872074127197,
+    "ActorCritic/entropy_loss": -2.8899331092834473,
+    "ActorCritic/S": 0.8500533103942871,
+    "ActorCritic/norm_ratio": 1.0,
+    "ActorCritic/total_loss": 5.027223587036133
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "phase": "completed",
+  "pid": 3758,
+  "step": 1200,
+  "started_unix": 1789957498.3803182,
+  "updated_unix": 1789957565.9261606,
+  "elapsed_hours": 0.01876273406876458,
+  "peak_gpu_GiB": 5.521152019500732,
+  "latest": {
+    "WorldModel/reconstruction_loss": 694.231689453125,
+    "WorldModel/reward_loss": 0.6869895458221436,
+    "WorldModel/termination_loss": 0.05966876819729805,
+    "WorldModel/dynamics_loss": 4.3438849449157715,
+    "WorldModel/dynamics_real_kl_div": 4.3438849449157715,
+    "WorldModel/representation_loss": 4.3438849449157715,
+    "WorldModel/representation_real_kl_div": 4.3438849449157715,
+    "WorldModel/total_loss": 699.7566528320312,
+    "ActorCritic/policy_loss": -0.5571732521057129,
+    "ActorCritic/value_loss": 5.194559097290039,
+    "ActorCritic/entropy_loss": -2.890284538269043,
+    "ActorCritic/S": 2.79900860786438,
+    "ActorCritic/norm_ratio": 2.79900860786438,
+    "ActorCritic/total_loss": 9.832396507263184,
+    "evaluate/score": -38.0
+  },
+  "target_interactions": 1200
+}
