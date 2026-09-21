@@ -23,6 +23,7 @@ from eval import build_single_env
 from replay_buffer import ReplayBuffer
 from envs.my_atari import Atari
 from utils import seed_np_torch
+from experiment_profiles import PROFILES, apply_profile
 
 
 def atomic_json(path, data):
@@ -148,6 +149,7 @@ def main():
     parser.add_argument('--steps', type=int, default=100000)
     parser.add_argument('--eval-episodes', type=int, default=10)
     parser.add_argument('--max-hours', type=float, default=11.9)
+    parser.add_argument('--profile', choices=tuple(PROFILES), default='public')
     args = parser.parse_args()
     args.run_dir = args.run_dir.resolve()
     args.run_dir.mkdir(parents=True, exist_ok=True)
@@ -155,6 +157,7 @@ def main():
         raise RuntimeError('Run already exists; refusing to overwrite or silently resume')
     os.chdir(ROOT)
     raw = yaml.safe_load((ROOT / 'config_files/configure.yaml').read_text())
+    raw = apply_profile(raw, args.profile)
     raw['BasicSettings'].update(Env_name=f'ALE/{args.game}-v5', Seed=args.seed,
                                 Device='cuda:0', Compile=False)
     raw['Models']['WorldModel']['dtype'] = torch.float32
@@ -177,6 +180,10 @@ def main():
         dummy.close()
         world_model = train.build_world_model(config, action_dim, 'cuda:0')
         agent = train.build_agent(config, action_dim, 'cuda:0')
+        if args.profile == 'lightweight' and args.game == 'Boxing':
+            actual = sum(p.numel() for p in world_model.parameters())
+            if actual != 7161603:
+                raise RuntimeError(f'Lightweight Boxing parameter count changed: {actual}')
         train.update_model_parameters(config, world_model, agent)
         atomic_json(args.run_dir / 'config.resolved.json', config)
         commit = subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip()
@@ -186,7 +193,7 @@ def main():
             env=config.BasicSettings.Env_name, seed=args.seed, target_interactions=args.steps,
             eval_interval=10000, eval_episodes=args.eval_episodes,
             compile=False, amp=config.BasicSettings.Use_amp, cuda_graph=config.BasicSettings.Use_cg,
-            architecture='upstream YAML four-stage encoder; not paper-exact DramaXS',
+            profile=args.profile, architecture=PROFILES[args.profile],
             wall_time_limit_hours=args.max_hours, automatic_next_run=False,
             checkpoint_scope='weights only; not exact resumable training state'))
         replay = ReplayBuffer(config, device='cuda:0', action_dim=action_dim, is_discrete=True)

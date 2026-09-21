@@ -1,0 +1,126 @@
+{
+  "world_model_parameters_before": 21925667,
+  "world_model_parameters_light": 7161603,
+  "parameter_reduction_percent": 67.33689789231954,
+  "combined_component_time_ratio": 0.9481690341095192,
+  "notes": "Component ratio is not an end-to-end speedup; no optimizer steps or candidate model measured",
+  "results": [
+    {
+      "profile": "public_21m",
+      "encoder_mults": [
+        1,
+        2,
+        4,
+        8
+      ],
+      "encoder_output_shape": [
+        128,
+        8,
+        8
+      ],
+      "world_model_parameters": 21925667,
+      "agent_parameters": 3419664,
+      "parameter_breakdown": {
+        "encoder": 270720,
+        "sequence_model": 3743648,
+        "dist_head": 8914944,
+        "image_decoder": 8667395,
+        "reward_decoder": 197119,
+        "termination_decoder": 131841
+      },
+      "recursive_cache_bytes_per_batch_row_float32": 164864,
+      "prediction_forward_backward": {
+        "median_seconds": 0.107969592907466,
+        "min_seconds": 0.09851273102685809,
+        "max_seconds": 0.1127478580456227,
+        "samples": [
+          0.09851273102685809,
+          0.10131711279973388,
+          0.10193154611624777,
+          0.10356249706819654,
+          0.10830355086363852,
+          0.10763563495129347,
+          0.11062215804122388,
+          0.1127478580456227,
+          0.11247682012617588,
+          0.11241630301810801
+        ]
+      },
+      "imagination_1024x16": {
+        "median_seconds": 0.039087283541448414,
+        "min_seconds": 0.039049590937793255,
+        "max_seconds": 0.03943881788291037,
+        "samples": [
+          0.03907529101707041,
+          0.03906705998815596,
+          0.039049590937793255,
+          0.03943881788291037,
+          0.039099276065826416,
+          0.03920810902491212
+        ]
+      },
+      "peak_allocated_gib": 3.768057346343994,
+      "optimizer_steps": 0,
+      "parameter_versions_unchanged": true
+    },
+    {
+      "profile": "lightweight_five_stage",
+      "encoder_mults": [
+        1,
+        2,
+        3,
+        4,
+        4
+      ],
+      "encoder_output_shape": [
+        64,
+        4,
+        4
+      ],
+      "world_model_parameters": 7161603,
+      "agent_parameters": 3419664,
+      "parameter_breakdown": {
+        "encoder": 232272,
+        "sequence_model": 3743648,
+        "dist_head": 1574912,
+        "image_decoder": 1281811,
+        "reward_decoder": 197119,
+        "termination_decoder": 131841
+      },
+      "recursive_cache_bytes_per_batch_row_float32": 164864,
+      "prediction_forward_backward": {
+        "median_seconds": 0.0998976860428229,
+        "min_seconds": 0.09290908789262176,
+        "max_seconds": 0.11168072395958006,
+        "samples": [
+          0.10681264800950885,
+          0.09308223985135555,
+          0.0930812789592892,
+          0.09290908789262176,
+          0.09309622086584568,
+          0.10173726081848145,
+          0.10088525200262666,
+          0.11025812895968556,
+          0.11168072395958006,
+          0.09891012008301914
+        ]
+      },
+      "imagination_1024x16": {
+        "median_seconds": 0.03953709045890719,
+        "min_seconds": 0.03754187701269984,
+        "max_seconds": 0.043128181947395205,
+        "samples": [
+          0.043128181947395205,
+          0.03754187701269984,
+          0.041355221066623926,
+          0.03756890003569424,
+          0.03771895985119045,
+          0.04168937704525888
+        ]
+      },
+      "peak_allocated_gib": 3.7211461067199707,
+      "optimizer_steps": 0,
+      "parameter_versions_unchanged": true
+    }
+  ]
+}

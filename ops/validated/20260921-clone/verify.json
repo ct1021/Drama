@@ -1,0 +1,96 @@
+{
+  "scope": "environment verification, not RL evidence",
+  "results": [
+    {
+      "check": "torch_cuda",
+      "ok": true,
+      "detail": {
+        "torch": "2.7.1+cu128",
+        "cuda": "12.8",
+        "gpu": "NVIDIA GeForce RTX 5090",
+        "capability": [
+          12,
+          0
+        ]
+      }
+    },
+    {
+      "check": "causal_conv_forward_backward",
+      "ok": true,
+      "detail": {
+        "shape": [
+          2,
+          64,
+          128
+        ]
+      }
+    },
+    {
+      "check": "vendored_mamba_forward_backward_and_cache",
+      "ok": true,
+      "detail": {
+        "module": "mamba_ssm/__init__.py",
+        "prefill_length": 8,
+        "cached_steps": 8,
+        "d_model": 256,
+        "dtype": "float32",
+        "max_cache_error": 6.16312026977539e-05
+      }
+    },
+    {
+      "check": "drama_component_imports",
+      "ok": true,
+      "detail": "Drama model, policy, replay, evaluation and training entry imported"
+    },
+    {
+      "check": "atari_rom_and_wrapper",
+      "ok": true,
+      "detail": {
+        "ROM_and_wrapper_checked": [
+          "Boxing",
+          "Krull",
+          "Breakout"
+        ],
+        "scope": "8 NOOP actions per game; no learning or score evaluation"
+      }
+    },
+    {
+      "check": "drama_imagination_with_default_cuda_graph",
+      "ok": true,
+      "detail": {
+        "cuda_graph": true,
+        "output_shapes": [
+          [
+            2,
+            5,
+            1536
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            2,
+            4,
+            18
+          ],
+          [
+            2,
+            8,
+            1536
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            2,
+            4
+          ]
+        ],
+        "optimizer_steps": 0,
+        "torch_compile_tested": false
+      }
+    }
+  ]
+}

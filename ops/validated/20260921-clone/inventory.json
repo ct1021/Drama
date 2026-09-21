@@ -1,0 +1,115 @@
+{
+  "root_exists": true,
+  "environment_python_exists": true,
+  "cpu_affinity": 128,
+  "gpu": {
+    "returncode": 0,
+    "stdout": "NVIDIA GeForce RTX 5090, 32607 MiB, 2 MiB, 100 %, 595.71.05",
+    "stderr": ""
+  },
+  "gpu_processes": {
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "cpu_model": "Intel(R) Xeon(R) Gold 6459C",
+  "memory": {
+    "MemTotal": "791192712 kB",
+    "MemAvailable": "562053536 kB"
+  },
+  "disk_free_gib": 34.83,
+  "container_limits": {
+    "memory.max": "96636764160",
+    "cpu.max": "1600000 100000",
+    "cpuset.cpus.effective": "0-127"
+  },
+  "training_processes": [],
+  "code_commit": {
+    "returncode": 0,
+    "stdout": "d4b2182c18bfb7a4d152f2fc76c16435cd0aa16e",
+    "stderr": ""
+  },
+  "code_status": {
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "prior_run_status": {
+    "phase": "completed",
+    "pid": 11077,
+    "step": 100000,
+    "started_unix": 1789807160.2559419,
+    "updated_unix": 1789825730.7424202,
+    "elapsed_hours": 5.158468466268645,
+    "peak_gpu_GiB": 5.876243591308594,
+    "latest": {
+      "WorldModel/reconstruction_loss": 2.5481247901916504,
+      "WorldModel/reward_loss": 0.041878510266542435,
+      "WorldModel/termination_loss": 0.00011344603262841702,
+      "WorldModel/dynamics_loss": 4.381423473358154,
+      "WorldModel/dynamics_real_kl_div": 4.381423473358154,
+      "WorldModel/representation_loss": 4.381423473358154,
+      "WorldModel/representation_real_kl_div": 4.381423473358154,
+      "WorldModel/total_loss": 7.409682750701904,
+      "ActorCritic/policy_loss": -9.476435661781579e-05,
+      "ActorCritic/value_loss": 1.2197508811950684,
+      "ActorCritic/entropy_loss": -0.06330905854701996,
+      "ActorCritic/S": 3.696033477783203,
+      "ActorCritic/norm_ratio": 3.696033477783203,
+      "ActorCritic/total_loss": 2.4412648677825928,
+      "episode/score": 53.0,
+      "episode/length": 1339.0,
+      "episode/normalised score": 4.416666666666667,
+      "benchmark/normalised PPO score": 17.666666666666668,
+      "benchmark/normalised SimPLe score": 6.625,
+      "benchmark/normalised SPR score": 1.4722222222222223,
+      "benchmark/normalised TWM score": 0.6794871794871795,
+      "benchmark/normalised IRIS score": 0.7571428571428571,
+      "benchmark/normalised Dreamer score": 0.6463414634146342,
+      "evaluate/score": 32.9
+    },
+    "target_interactions": 100000
+  },
+  "core_files": [
+    {
+      "path": "manifest.json",
+      "bytes": 827,
+      "sha256": "a7030e00731c80eb080cbbb3cea17d75d68a35dd419529edc237119bf2b99d0c"
+    },
+    {
+      "path": "config.resolved.json",
+      "bytes": 4330,
+      "sha256": "2fe905c1b4908540acde6596aa3328d87e45748f32c47250900fc57894ec61a3"
+    },
+    {
+      "path": "status.json",
+      "bytes": 1486,
+      "sha256": "37459dac21b00952ae614c49ceb3e35d3fec3a996aafabae8048e28c15e8f247"
+    },
+    {
+      "path": "evaluations.jsonl",
+      "bytes": 3467,
+      "sha256": "b7713f778458b034a2c31c0a3c1fa73fc783d025cbffb100c6ecfc9d5d606f90"
+    },
+    {
+      "path": "metrics.jsonl",
+      "bytes": 150719195,
+      "sha256": "986f535ce0a555b9d812d438c4cf8d83f3047db937458ec65b5ab018c29e5c30"
+    },
+    {
+      "path": "console.log",
+      "bytes": 103622,
+      "sha256": "a72bdee0edaebbada122c3b2796b312d5161604ab1ef709ea70d8ab25bf9f8cf"
+    },
+    {
+      "path": "ckpt/world_model-final.pth",
+      "bytes": 87742001,
+      "sha256": "dca730ef06a75a7c863d42f5e4e7819128e7ad4ea98d95b202a1073151e5e132"
+    },
+    {
+      "path": "ckpt/agent-final.pth",
+      "bytes": 13690652,
+      "sha256": "41ad2e0dfa7a4011c9134841e50f132e1cd9a8db8843d3388d47a6ddc9ec3457"
+    }
+  ]
+}

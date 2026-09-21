@@ -1,0 +1,64 @@
+{
+  "python": "3.12.3 | packaged by Anaconda, Inc. | (main, May  6 2024, 19:46:43) [GCC 11.2.0]",
+  "executable": "/root/autodl-tmp/drama-research-20260919/envs/drama-cu128/bin/python",
+  "platform": "Linux-5.15.0-119-generic-x86_64-with-glibc2.35",
+  "cpu_count": 128,
+  "container_limits": {
+    "memory.max": "96636764160",
+    "cpu.max": "1600000 100000",
+    "cpuset.cpus.effective": "0-127"
+  },
+  "packages": {
+    "torch": "2.7.1+cu128",
+    "torchvision": "0.22.1+cu128",
+    "torchaudio": "2.7.1+cu128",
+    "triton": "3.3.1",
+    "mamba-ssm": "2.2.6.post3",
+    "causal-conv1d": "1.5.2+sm120",
+    "torchao": "0.12.0",
+    "torchtune": "0.5.0",
+    "gymnasium": "1.2.2",
+    "ale-py": "0.12.1",
+    "numpy": "2.1.0",
+    "transformers": "4.51.3",
+    "wandb": "0.23.0"
+  },
+  "disks": {
+    "/": {
+      "total_GiB": 30.0,
+      "free_GiB": 21.95
+    },
+    "/root/autodl-tmp": {
+      "total_GiB": 50.0,
+      "free_GiB": 34.83
+    },
+    "/tmp": {
+      "total_GiB": 30.0,
+      "free_GiB": 21.95
+    },
+    "/dev/shm": {
+      "total_GiB": 45.0,
+      "free_GiB": 45.0
+    }
+  },
+  "gpu": {
+    "returncode": 0,
+    "stdout": "NVIDIA GeForce RTX 5090, 32607 MiB, 595.71.05",
+    "stderr": ""
+  },
+  "nvcc": {
+    "returncode": 0,
+    "stdout": "nvcc: NVIDIA (R) Cuda compiler driver\nCopyright (c) 2005-2025 NVIDIA Corporation\nBuilt on Fri_Feb_21_20:23:50_PST_2025\nCuda compilation tools, release 12.8, V12.8.93\nBuild cuda_12.8.r12.8/compiler.35583870_0",
+    "stderr": ""
+  },
+  "compiler": {
+    "returncode": 0,
+    "stdout": "g++ (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0\nCopyright (C) 2021 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.",
+    "stderr": ""
+  },
+  "torch_probe": {
+    "returncode": 0,
+    "stdout": "{\"version\": \"2.7.1+cu128\", \"cuda\": \"12.8\", \"available\": true, \"arch_list\": [\"sm_75\", \"sm_80\", \"sm_86\", \"sm_90\", \"sm_100\", \"sm_120\", \"compute_120\"]}",
+    "stderr": ""
+  }
+}
