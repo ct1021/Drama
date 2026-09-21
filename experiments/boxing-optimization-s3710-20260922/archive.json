@@ -1,0 +1,142 @@
+{
+  "schema": 1,
+  "training_commit": "f401807975d9ad050c61f795e09a5b4b7e27f2ef",
+  "archive": {
+    "filename": "boxing-optimization-s3710-100k-f401807.tar.gz",
+    "bytes": 189652947,
+    "sha256": "6309d3b384a2ea433dd67bb4f11710599719b17b5ac1a0267872ebc21c97aa8e",
+    "files": 248,
+    "created_unix": 1790033874.6693876
+  },
+  "parts": [
+    {
+      "index": 0,
+      "name": "boxing-optimization-s3710-100k-f401807.tar.gz.part000",
+      "bytes": 12582912,
+      "sha256": "543cf7b27ec69f21bc495cc6dcf675bf7ba28d92da61c28a431ac00b97566613",
+      "asset_id": 580090449,
+      "url": "https://github.com/ct1021/Drama/releases/download/boxing-optimization-s3710-100k-20260922/boxing-optimization-s3710-100k-f401807.tar.gz.part000"
+    },
+    {
+      "index": 1,
+      "name": "boxing-optimization-s3710-100k-f401807.tar.gz.part001",
+      "bytes": 12582912,
+      "sha256": "9806b80de3be3e262cd8e27e11967ffeaca995826f89f4866c5947673e064fd6",
+      "asset_id": 580090447,
+      "url": "https://github.com/ct1021/Drama/releases/download/boxing-optimization-s3710-100k-20260922/boxing-optimization-s3710-100k-f401807.tar.gz.part001"
+    },
+    {
+      "index": 2,
+      "name": "boxing-optimization-s3710-100k-f401807.tar.gz.part002",
+      "bytes": 12582912,
+      "sha256": "f83026cf92eb71d6853b4be1399c447d7335527c2c26cd34ec66119d3fadb727",
+      "asset_id": 580090445,
+      "url": "https://github.com/ct1021/Drama/releases/download/boxing-optimization-s3710-100k-20260922/boxing-optimization-s3710-100k-f401807.tar.gz.part002"
+    },
+    {
+      "index": 3,
+      "name": "boxing-optimization-s3710-100k-f401807.tar.gz.part003",
+      "bytes": 12582912,
+      "sha256": "c2e4351390b26fbb82a4ad6e85bddcb9346a53d4af036014f6c8cba9bb862608",
+      "asset_id": 580090444,
+      "url": "https://github.com/ct1021/Drama/releases/download/boxing-optimization-s3710-100k-20260922/boxing-optimization-s3710-100k-f401807.tar.gz.part003"
+    },
+    {
+      "index": 4,
+      "name": "boxing-optimization-s3710-100k-f401807.tar.gz.part004",
+      "bytes": 12582912,
+      "sha256": "8e5fca4563ab0ca2c7eaefe296d94455bf7ec855677fb66a2a8dd21998caea3b",
+      "asset_id": 580090575,
+      "url": "https://github.com/ct1021/Drama/releases/download/boxing-optimization-s3710-100k-20260922/boxing-optimization-s3710-100k-f401807.tar.gz.part004"
+    },
+    {
+      "index": 5,
+      "name": "boxing-optimization-s3710-100k-f401807.tar.gz.part005",
+      "bytes": 12582912,
+      "sha256": "687d653cf276a652936a74dfab0ce618b7006081f771431d8f34c84a81198c4f",
+      "asset_id": 580090585,
+      "url": "https://github.com/ct1021/Drama/releases/download/boxing-optimization-s3710-100k-20260922/boxing-optimization-s3710-100k-f401807.tar.gz.part005"
+    },
+    {
+      "index": 6,
+      "name": "boxing-optimization-s3710-100k-f401807.tar.gz.part006",
+      "bytes": 12582912,
+      "sha256": "4b13e3761c3e4f6a95fba570600c5847b6ff35d22ed664144675e13cea527935",
+      "asset_id": 580090612,
+      "url": "https://github.com/ct1021/Drama/releases/download/boxing-optimization-s3710-100k-20260922/boxing-optimization-s3710-100k-f401807.tar.gz.part006"
+    },
+    {
+      "index": 7,
+      "name": "boxing-optimization-s3710-100k-f401807.tar.gz.part007",
+      "bytes": 12582912,
+      "sha256": "dda95a17c71461d56ad7fa89ef531c1fd6fa0b3f0d35acc4dc9285511aae21bd",
+      "asset_id": 580090615,
+      "url": "https://github.com/ct1021/Drama/releases/download/boxing-optimization-s3710-100k-20260922/boxing-optimization-s3710-100k-f401807.tar.gz.part007"
+    },
+    {
+      "index": 8,
+      "name": "boxing-optimization-s3710-100k-f401807.tar.gz.part008",
+      "bytes": 12582912,
+      "sha256": "4d09caea215a8286952739ae7565eb9e94d08d398e2d277375a2242c501085d7",
+      "asset_id": 580090646,
+      "url": "https://github.com/ct1021/Drama/releases/download/boxing-optimization-s3710-100k-20260922/boxing-optimization-s3710-100k-f401807.tar.gz.part008"
+    },
+    {
+      "index": 9,
+      "name": "boxing-optimization-s3710-100k-f401807.tar.gz.part009",
+      "bytes": 12582912,
+      "sha256": "d87f9a5f223a7e9b94d27c6cdeda809df2fa9610e5fbc59909c7e38d1d365d41",
+      "asset_id": 580090652,
+      "url": "https://github.com/ct1021/Drama/releases/download/boxing-optimization-s3710-100k-20260922/boxing-optimization-s3710-100k-f401807.tar.gz.part009"
+    },
+    {
+      "index": 10,
+      "name": "boxing-optimization-s3710-100k-f401807.tar.gz.part010",
+      "bytes": 12582912,
+      "sha256": "8540f1cb9b8019eceb77ee5abb25a380f1d8e94f6b760186587c575d30127d31",
+      "asset_id": 580090680,
+      "url": "https://github.com/ct1021/Drama/releases/download/boxing-optimization-s3710-100k-20260922/boxing-optimization-s3710-100k-f401807.tar.gz.part010"
+    },
+    {
+      "index": 11,
+      "name": "boxing-optimization-s3710-100k-f401807.tar.gz.part011",
+      "bytes": 12582912,
+      "sha256": "538adadca015c734bc318b6e291ce1683dc18330b28d3d8143f64c7c36ca30b9",
+      "asset_id": 580090795,
+      "url": "https://github.com/ct1021/Drama/releases/download/boxing-optimization-s3710-100k-20260922/boxing-optimization-s3710-100k-f401807.tar.gz.part011"
+    },
+    {
+      "index": 12,
+      "name": "boxing-optimization-s3710-100k-f401807.tar.gz.part012",
+      "bytes": 12582912,
+      "sha256": "ea851718288b55a9df057970b622f17fa6687deed5d586301988f8a16d95fd35",
+      "asset_id": 580090800,
+      "url": "https://github.com/ct1021/Drama/releases/download/boxing-optimization-s3710-100k-20260922/boxing-optimization-s3710-100k-f401807.tar.gz.part012"
+    },
+    {
+      "index": 13,
+      "name": "boxing-optimization-s3710-100k-f401807.tar.gz.part013",
+      "bytes": 12582912,
+      "sha256": "1922d3bae85c529d83a0f7ed75f86feece3ec87d7269125523bc6577b774a983",
+      "asset_id": 580090856,
+      "url": "https://github.com/ct1021/Drama/releases/download/boxing-optimization-s3710-100k-20260922/boxing-optimization-s3710-100k-f401807.tar.gz.part013"
+    },
+    {
+      "index": 14,
+      "name": "boxing-optimization-s3710-100k-f401807.tar.gz.part014",
+      "bytes": 12582912,
+      "sha256": "16c15383d0fa7b51f302d83f63873b31722201c137ab937ce875c5a96f6d7dc5",
+      "asset_id": 580090875,
+      "url": "https://github.com/ct1021/Drama/releases/download/boxing-optimization-s3710-100k-20260922/boxing-optimization-s3710-100k-f401807.tar.gz.part014"
+    },
+    {
+      "index": 15,
+      "name": "boxing-optimization-s3710-100k-f401807.tar.gz.part015",
+      "bytes": 909267,
+      "sha256": "cd51cf47044343675678b6f50e08e72e5d5d57e5a8629f3710fecc9a6bc053d6",
+      "asset_id": 580090918,
+      "url": "https://github.com/ct1021/Drama/releases/download/boxing-optimization-s3710-100k-20260922/boxing-optimization-s3710-100k-f401807.tar.gz.part015"
+    }
+  ],
+  "release_url": "https://github.com/ct1021/Drama/releases/tag/boxing-optimization-s3710-100k-20260922"
+}

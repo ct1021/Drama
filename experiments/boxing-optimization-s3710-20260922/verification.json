@@ -1,0 +1,74 @@
+{
+  "archive_sha256": "6309d3b384a2ea433dd67bb4f11710599719b17b5ac1a0267872ebc21c97aa8e",
+  "verified_files": 248,
+  "training_commit": "f401807975d9ad050c61f795e09a5b4b7e27f2ef",
+  "exact_training_resume": false,
+  "destination": "C:\\Users\\CT1021\\Documents\\Codex\\2026-08-09\\2026-08-10\\research-reset-20260917\\environment-clone-20260921\\h1\\migration-optimization\\restored-from-github",
+  "installed_packages": false,
+  "started_training": false,
+  "metrics_rows": 2672848,
+  "nonfinite_values": 0,
+  "metric_step_range": [
+    1033,
+    100000
+  ],
+  "evaluations": 10,
+  "evaluation_episodes": 100,
+  "actual_interactions": 100000,
+  "elapsed_hours": 4.750067537360721,
+  "peak_torch_allocated_GiB": 5.521160125732422,
+  "original_experiment_files": [
+    {
+      "path": "experiment/ckpt/agent-final.pth",
+      "bytes": 13690652,
+      "sha256": "380bf96a7ba1289c57a5c48b27ecf534c8da73865c000f4f53cfd01b534bf7e9"
+    },
+    {
+      "path": "experiment/ckpt/agent.pth",
+      "bytes": 13688370,
+      "sha256": "b482c81f8e1ba2f6ceec42f10839f482f86a45c7f2d88c058b32974a5bb424fb"
+    },
+    {
+      "path": "experiment/ckpt/world_model-final.pth",
+      "bytes": 28690659,
+      "sha256": "89fc2c56f7385a28db37bbb7a27e5ef1812faa8071383e1a2184bc75aca12238"
+    },
+    {
+      "path": "experiment/ckpt/world_model.pth",
+      "bytes": 28689969,
+      "sha256": "7948701f78db29f54ef7f566f45f36affdaa43e2c430b23b874353bac2c2a997"
+    },
+    {
+      "path": "experiment/config.resolved.json",
+      "bytes": 4395,
+      "sha256": "3ab8788a5451b6b280d2fbdc26a65b2d2a05855596c1ab95bae45defaea217cb"
+    },
+    {
+      "path": "experiment/console.log",
+      "bytes": 96301,
+      "sha256": "2fe9ecb8df57e60d9f616bf11c07593c1e0ee70bef0c8d6fa005b74a4bae651c"
+    },
+    {
+      "path": "experiment/evaluations.jsonl",
+      "bytes": 3431,
+      "sha256": "9a19f139dc978377c591ec6c179a2e5465f0617743d0799f36dd7bf0b206ff51"
+    },
+    {
+      "path": "experiment/manifest.json",
+      "bytes": 1343,
+      "sha256": "6603460505552b5ab60c58e10f59785cd571bd121dbef12b03c04fbd3df9a5ec"
+    },
+    {
+      "path": "experiment/metrics.jsonl",
+      "bytes": 303878381,
+      "sha256": "c6aca86c0bdac8c82303f2eebb04db3695f9796e2afd3719f726ceca8c81b825"
+    },
+    {
+      "path": "experiment/status.json",
+      "bytes": 2303,
+      "sha256": "03580e47efb11aac76eda516e970437d5855886c2f337bd7cde5f23dcff34692"
+    }
+  ],
+  "public_download": true,
+  "late_60k_100k_mean": 63.46
+}

@@ -1,0 +1,45 @@
+{
+  "profile": "lightweight-harmonized",
+  "world_model_parameters": 7161606,
+  "cache_bytes_per_row_float32": 164864,
+  "cache_max_errors": [
+    0.0007561445236206055,
+    0.0007573366165161133
+  ],
+  "private_state_leak_errors": [],
+  "private_state_changed_outputs": [],
+  "optimizer_parameter_coverage": true,
+  "reset_prefill_lengths": [
+    1,
+    8
+  ],
+  "real_decision_matches_sequence": true,
+  "default_cuda_graph": true,
+  "prediction_forward_backward": {
+    "median_seconds": 0.10352698108181357,
+    "samples": [
+      0.09734172699972987,
+      0.09717326611280441,
+      0.10352698108181357,
+      0.10417908011004329,
+      0.10584968281909823
+    ]
+  },
+  "imagination_1024x16": {
+    "median_seconds": 0.03817001613788307,
+    "samples": [
+      0.03814580803737044,
+      0.038145625963807106,
+      0.03817280218936503,
+      0.03817001613788307,
+      0.03823340800590813
+    ]
+  },
+  "optimizer_steps": 0,
+  "ok": true,
+  "identical_base_initialization": true,
+  "extra_training_scalars": 3,
+  "scalar_optimizer_coverage": true,
+  "scalar_weight_decay": 0,
+  "scope": "B GPU correctness; not RL performance"
+}
