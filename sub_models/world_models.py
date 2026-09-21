@@ -370,16 +370,31 @@ class WorldModel(nn.Module):
         if routing_mode != 'none':
             from sub_models.task_routing import install_task_routing
             self.routing_metadata = install_task_routing(self, routing_mode)
+
+        self.loss_harmonizer = None
+        self.harmonization_metadata = None
+        harmonization = config.Models.WorldModel.get('LossHarmonization', 'none')
+        if harmonization != 'none':
+            if harmonization != 'rectified' or routing_mode != 'none':
+                raise ValueError('B requires rectified losses and the original shared architecture')
+            from sub_models.loss_harmonization import RectifiedLossHarmonizer
+            self.loss_harmonizer = RectifiedLossHarmonizer(device=device)
+            self.harmonization_metadata = dict(method='HarmonyDream-inspired rectified weighting',
+                tasks=['image', 'reward', 'dynamics+0.1*representation'], termination_weight=1.0,
+                initial_log_scales=[0.0, 0.0, 0.0], scalar_weight_decay=0.0,
+                scope='Drama optimization control; not full HarmonyDream reproduction')
  
         self.mse_loss_func = MSELoss()
         self.ce_loss = nn.CrossEntropyLoss()
         self.bce_with_logits_loss_func = nn.BCEWithLogitsLoss()
         self.symlog_twohot_loss_func = SymLogTwoHotLoss(num_classes=255, lower_bound=-20, upper_bound=20)
         self.categorical_kl_div_loss = CategoricalKLDivLossWithFreeBits(free_bits=1)
+        optimizer_parameters = (self.parameters() if self.loss_harmonizer is None
+                                else self.loss_harmonizer.optimizer_groups(self))
         if config.Models.WorldModel.Optimiser == 'Laprop':
-            self.optimizer = LaProp(self.parameters(), lr=config.Models.WorldModel.Laprop.LearningRate, eps=config.Models.WorldModel.Laprop.Epsilon, weight_decay=config.Models.WorldModel.Weight_decay)
+            self.optimizer = LaProp(optimizer_parameters, lr=config.Models.WorldModel.Laprop.LearningRate, eps=config.Models.WorldModel.Laprop.Epsilon, weight_decay=config.Models.WorldModel.Weight_decay)
         elif config.Models.WorldModel.Optimiser == 'Adam':
-            self.optimizer = torch.optim.AdamW(self.parameters(), lr=config.Models.WorldModel.Adam.LearningRate, weight_decay=config.Models.WorldModel.Weight_decay)
+            self.optimizer = torch.optim.AdamW(optimizer_parameters, lr=config.Models.WorldModel.Adam.LearningRate, weight_decay=config.Models.WorldModel.Weight_decay)
         else:
             raise ValueError(f"Unknown optimiser: {config.Models.WorldModel.Optimiser}")
         # self.optimizer = AGC(self.parameters(), self.optimizer)
@@ -674,15 +689,25 @@ class WorldModel(nn.Module):
             representation_loss, representation_real_kl_div = self.categorical_kl_div_loss(post_logits[:, 1:], prior_logits[:, :-1].detach())
             total_loss = reconstruction_loss + reward_loss + termination_loss + dynamics_loss + 0.1*representation_loss
 
+            harmony_metrics = {}
+            if self.loss_harmonizer is not None:
+                total_loss, harmony_metrics = self.loss_harmonizer(
+                    reconstruction_loss, reward_loss, dynamics_loss, representation_loss, termination_loss)
+
         # gradient descent
         self.scaler.scale(total_loss).backward()
         self.scaler.unscale_(self.optimizer)  # for clip grad
-        torch.nn.utils.clip_grad_norm_(self.parameters(), max_norm=self.max_grad_norm)
+        torch.nn.utils.clip_grad_norm_(self.parameters(), max_norm=self.max_grad_norm,
+                                      error_if_nonfinite=self.loss_harmonizer is not None)
         self.scaler.step(self.optimizer)
         self.scaler.update()
         self.optimizer.zero_grad(set_to_none=True)
         self.lr_scheduler.step()
         self.warmup_scheduler.dampen()
+
+        if logger is not None:
+            for tag, value in harmony_metrics.items():
+                logger.log(tag, value.item(), global_step=global_step)
 
         if (global_step + epoch_step) % self.save_every_steps == 0: # and global_step != 0:
             sample_obs = torch.clamp(obs[:3, 0, :]*255, 0, 255).permute(0, 2, 3, 1).cpu().detach().float().numpy().astype(np.uint8)

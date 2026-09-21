@@ -34,6 +34,11 @@ class ProfileTests(unittest.TestCase):
             self.assertEqual(result['Models']['WorldModel'].pop('TaskRouting'), mode)
             self.assertEqual(result, apply_profile(self.raw, 'lightweight'))
 
+    def test_B_only_adds_loss_harmonization(self):
+        result = apply_profile(self.raw, 'lightweight-harmonized')
+        self.assertEqual(result['Models']['WorldModel'].pop('LossHarmonization'), 'rectified')
+        self.assertEqual(result, apply_profile(self.raw, 'lightweight'))
+
 
 if __name__ == '__main__':
     unittest.main()

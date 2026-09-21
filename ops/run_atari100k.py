@@ -184,6 +184,10 @@ def main():
             actual = sum(p.numel() for p in world_model.parameters())
             if actual != 7161603:
                 raise RuntimeError(f'Lightweight Boxing parameter count changed: {actual}')
+        if args.profile == 'lightweight-harmonized' and args.game == 'Boxing':
+            actual = sum(p.numel() for p in world_model.parameters())
+            if actual != 7161606:
+                raise RuntimeError(f'B must add exactly three scalars to A: {actual}')
         train.update_model_parameters(config, world_model, agent)
         atomic_json(args.run_dir / 'config.resolved.json', config)
         commit = subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip()
@@ -191,12 +195,14 @@ def main():
             code_commit=commit, branch=subprocess.check_output(['git', 'branch', '--show-current'], text=True).strip(),
             command=sys.argv, scope=('architecture_candidate' if args.profile == 'lightweight-routed'
                                     else 'architecture_control' if args.profile == 'lightweight-readout'
+                                    else 'optimization_control' if args.profile == 'lightweight-harmonized'
                                     else 'baseline') if args.steps == 100000 else 'integration_only',
             env=config.BasicSettings.Env_name, seed=args.seed, target_interactions=args.steps,
             eval_interval=10000, eval_episodes=args.eval_episodes,
             compile=False, amp=config.BasicSettings.Use_amp, cuda_graph=config.BasicSettings.Use_cg,
             profile=args.profile, architecture=PROFILES[args.profile],
             routing=world_model.routing_metadata,
+            harmonization=world_model.harmonization_metadata,
             wall_time_limit_hours=args.max_hours, automatic_next_run=False,
             checkpoint_scope='weights only; not exact resumable training state'))
         replay = ReplayBuffer(config, device='cuda:0', action_dim=action_dim, is_discrete=True)

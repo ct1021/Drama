@@ -95,10 +95,16 @@ def run(profile):
             feature=seq(z,act);prior=wm.dist_head.forward_prior(feature)
             dyn,_=wm.categorical_kl_div_loss(post[:,1:].detach(),prior[:,:-1])
             rep,_=wm.categorical_kl_div_loss(post[:,1:],prior[:,:-1].detach())
-            loss=(wm.mse_loss_func(reconstruction,obs)+wm.symlog_twohot_loss_func(wm.reward_decoder(feature),targets)
-                  +wm.bce_with_logits_loss_func(wm.termination_decoder(feature),targets)+dyn+0.1*rep)
+            rec=wm.mse_loss_func(reconstruction,obs)
+            reward=wm.symlog_twohot_loss_func(wm.reward_decoder(feature),targets)
+            term=wm.bce_with_logits_loss_func(wm.termination_decoder(feature),targets)
+            loss=rec+reward+term+dyn+0.1*rep
+            if wm.loss_harmonizer is not None:
+                loss,_=wm.loss_harmonizer(rec,reward,dyn,rep,term)
         loss.backward();assert torch.isfinite(loss)
         assert all(p.grad is None or torch.isfinite(p.grad).all() for p in wm.parameters())
+        if wm.loss_harmonizer is not None:
+            assert wm.loss_harmonizer.log_scales.grad is not None
     backward_time=timed(backward)
     wm.zero_grad(set_to_none=True);wm.eval()
     del obs,act,targets
@@ -119,13 +125,14 @@ def run(profile):
     return result
 
 
-results=[]
-for profile in ('lightweight','lightweight-readout','lightweight-routed'):
-    try:
-        with contextlib.redirect_stdout(sys.stderr):result=run(profile)
-        results.append(dict(ok=True,**result));print(json.dumps(results[-1]),flush=True)
-    except Exception:
-        results.append(dict(profile=profile,ok=False,error=traceback.format_exc()))
-        print(json.dumps(results[-1]),flush=True);break
-print(json.dumps({'scope':'GPU engineering checks and synthetic timing; not RL performance','results':results}),flush=True)
-raise SystemExit(0 if len(results)==3 and all(r['ok'] for r in results) else 1)
+if __name__=='__main__':
+    results=[]
+    for profile in ('lightweight','lightweight-readout','lightweight-routed'):
+        try:
+            with contextlib.redirect_stdout(sys.stderr):result=run(profile)
+            results.append(dict(ok=True,**result));print(json.dumps(results[-1]),flush=True)
+        except Exception:
+            results.append(dict(profile=profile,ok=False,error=traceback.format_exc()))
+            print(json.dumps(results[-1]),flush=True);break
+    print(json.dumps({'scope':'GPU engineering checks and synthetic timing; not RL performance','results':results}),flush=True)
+    raise SystemExit(0 if len(results)==3 and all(r['ok'] for r in results) else 1)

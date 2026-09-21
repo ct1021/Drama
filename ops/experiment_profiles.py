@@ -6,6 +6,7 @@ PROFILES = {
     'lightweight': 'five-stage AE [1,2,3,4,4]; original Mamba2/DFS/AC; head_dim64; not paper-exact DramaXS',
     'lightweight-readout': 'C: lightweight AE; shared Mamba2 recurrence; task-restricted prediction readouts',
     'lightweight-routed': 'D: lightweight AE; H1-R1 block-triangular recurrence and partition norms; same readouts as C',
+    'lightweight-harmonized': 'B: original lightweight architecture; three rectified loss weights; HarmonyDream adaptation',
 }
 
 
@@ -18,4 +19,6 @@ def apply_profile(raw, profile):
             result['Models']['WorldModel'][component]['Mults'] = [1, 2, 3, 4, 4]
     if profile in ('lightweight-readout', 'lightweight-routed'):
         result['Models']['WorldModel']['TaskRouting'] = profile.removeprefix('lightweight-')
+    if profile == 'lightweight-harmonized':
+        result['Models']['WorldModel']['LossHarmonization'] = 'rectified'
     return result
