@@ -1,0 +1,259 @@
+{
+  "checked_unix": 1789985029.0790942,
+  "pair": {
+    "phase": "running",
+    "pid": 15028,
+    "started_unix": 1789981108.5597742,
+    "code_commit": "5829fc831febdbd844506f9d87906e6c0b348cbb",
+    "gate": "/root/autodl-tmp/drama-research-20260919/runs/h1-integration-1800-5829fc8/integration-summary.json",
+    "scope": "exactly two authorized C/D experiments",
+    "runs": [
+      {
+        "profile": "lightweight-readout",
+        "run_dir": "/root/autodl-tmp/drama-research-20260919/runs/boxing-readout-control-s3710-100k-20260921",
+        "phase": "running",
+        "supervisor_pid": 15033
+      },
+      {
+        "profile": "lightweight-routed",
+        "run_dir": "/root/autodl-tmp/drama-research-20260919/runs/boxing-h1-routed-s3710-100k-20260921",
+        "phase": "pending"
+      }
+    ],
+    "automatic_restart": false,
+    "additional_experiments": false,
+    "per_run_cap_hours": 7,
+    "current": 0,
+    "updated_unix": 1789981108.6559443
+  },
+  "runs": [
+    {
+      "checked_unix": 1789985028.9991329,
+      "run_dir": "/root/autodl-tmp/drama-research-20260919/runs/boxing-readout-control-s3710-100k-20260921",
+      "process_alive": true,
+      "status": {
+        "phase": "training",
+        "pid": 15034,
+        "step": 23600,
+        "started_unix": 1789981112.6083586,
+        "updated_unix": 1789985026.3480935,
+        "elapsed_hours": 1.087149926357799,
+        "peak_gpu_GiB": 5.519665718078613,
+        "latest": {
+          "WorldModel/reconstruction_loss": 6.479131698608398,
+          "WorldModel/reward_loss": 0.04263807088136673,
+          "WorldModel/termination_loss": 0.0016526213148608804,
+          "WorldModel/dynamics_loss": 3.013643503189087,
+          "WorldModel/dynamics_real_kl_div": 3.013643503189087,
+          "WorldModel/representation_loss": 3.013643503189087,
+          "WorldModel/representation_real_kl_div": 3.013643503189087,
+          "WorldModel/total_loss": 9.838430404663086,
+          "ActorCritic/policy_loss": 0.00027886853786185384,
+          "ActorCritic/value_loss": 1.055345058441162,
+          "ActorCritic/entropy_loss": -0.08080451190471649,
+          "ActorCritic/S": 1.7314724922180176,
+          "ActorCritic/norm_ratio": 1.7314724922180176,
+          "ActorCritic/total_loss": 2.109191417694092,
+          "episode/score": 3.0,
+          "episode/length": 1785.0,
+          "episode/normalised score": 0.25,
+          "benchmark/normalised PPO score": 1.0,
+          "benchmark/normalised SimPLe score": 0.375,
+          "benchmark/normalised SPR score": 0.08333333333333333,
+          "benchmark/normalised TWM score": 0.038461538461538464,
+          "benchmark/normalised IRIS score": 0.04285714285714286,
+          "benchmark/normalised Dreamer score": 0.036585365853658534,
+          "evaluate/score": 6.6
+        }
+      },
+      "status_age_seconds": 2.6510398387908936,
+      "evaluations": [
+        {
+          "training_step": 10000,
+          "seeds": [
+            237100,
+            237101,
+            237102,
+            237103,
+            237104,
+            237105,
+            237106,
+            237107,
+            237108,
+            237109
+          ],
+          "returns": [
+            -4.0,
+            9.0,
+            -4.0,
+            1.0,
+            0.0,
+            6.0,
+            0.0,
+            3.0,
+            1.0,
+            2.0
+          ],
+          "action_counts": [
+            1786,
+            1786,
+            1786,
+            1786,
+            1786,
+            1786,
+            1786,
+            1786,
+            1786,
+            1786
+          ],
+          "mean": 1.4,
+          "seconds": 21.634584188461304,
+          "policy": "greedy",
+          "episodes": 10
+        },
+        {
+          "training_step": 20000,
+          "seeds": [
+            237100,
+            237101,
+            237102,
+            237103,
+            237104,
+            237105,
+            237106,
+            237107,
+            237108,
+            237109
+          ],
+          "returns": [
+            31.0,
+            0.0,
+            -1.0,
+            6.0,
+            0.0,
+            15.0,
+            0.0,
+            -2.0,
+            5.0,
+            12.0
+          ],
+          "action_counts": [
+            1786,
+            1786,
+            1786,
+            1786,
+            1786,
+            1786,
+            1786,
+            1786,
+            1786,
+            1786
+          ],
+          "mean": 6.6,
+          "seconds": 21.655821323394775,
+          "policy": "greedy",
+          "episodes": 10
+        }
+      ],
+      "checkpoints": [
+        {
+          "name": "agent.pth",
+          "bytes": 13688370,
+          "modified": 1789984754.0565846
+        },
+        {
+          "name": "world_model.pth",
+          "bytes": 27903215,
+          "modified": 1789984754.0365846
+        }
+      ],
+      "gpu": "9008 MiB, 70 %",
+      "console_tail": "\rTraining:  14%|\u2588\u258d        | 14402/100000 [38:50<4:05:21,  5.81it/s]\rTraining:  15%|\u2588\u258d        | 14579/100000 [39:07<4:04:07,  5.83it/s]\rTraining:  15%|\u2588\u258d        | 14579/100000 [39:20<4:04:07,  5.83it/s]\rTraining:  15%|\u2588\u258d        | 14757/100000 [39:37<4:02:42,  5.85it/s]\rTraining:  15%|\u2588\u258d        | 14757/100000 [39:50<4:02:42,  5.85it/s]\rTraining:  15%|\u2588\u258d        | 14935/100000 [40:07<4:01:22,  5.87it/s]\rTraining:  15%|\u2588\u258d        | 14935/100000 [40:20<4:01:22,  5.87it/s]\rTraining:  15%|\u2588\u258c        | 15110/100000 [40:37<4:01:38,  5.86it/s]\rTraining:  15%|\u2588\u258c        | 15110/100000 [40:50<4:01:38,  5.86it/s]\rTraining:  15%|\u2588\u258c        | 15285/100000 [41:08<4:01:36,  5.84it/s]\rTraining:  15%|\u2588\u258c        | 15285/100000 [41:20<4:01:36,  5.84it/s]\rTraining:  15%|\u2588\u258c        | 15460/100000 [41:38<4:01:28,  5.83it/s]\rTraining:  15%|\u2588\u258c        | 15460/100000 [41:50<4:01:28,  5.83it/s]\rTraining:  16%|\u2588\u258c        | 15635/100000 [42:08<4:01:22,  5.83it/s]\rTraining:  16%|\u2588\u258c        | 15635/100000 [42:20<4:01:22,  5.83it/s]\rTraining:  16%|\u2588\u258c        | 15811/100000 [42:38<4:00:31,  5.83it/s]\rTraining:  16%|\u2588\u258c        | 15811/100000 [42:50<4:00:31,  5.83it/s]\rTraining:  16%|\u2588\u258c        | 15987/100000 [43:08<3:59:51,  5.84it/s]\u001b[32mSaving model at total steps 16000\u001b[0m\n\rTraining:  16%|\u2588\u258c        | 15987/100000 [43:20<3:59:51,  5.84it/s]\rTraining:  16%|\u2588\u258c        | 16163/100000 [43:38<3:59:18,  5.84it/s]\rTraining:  16%|\u2588\u258c        | 16163/100000 [43:50<3:59:18,  5.84it/s]\rTraining:  16%|\u2588\u258b        | 16339/100000 [44:08<3:58:52,  5.84it/s]\rTraining:  16%|\u2588\u258b        | 16339/100000 [44:20<3:58:52,  5.84it/s]\rTraining:  17%|\u2588\u258b        | 16517/100000 [44:38<3:57:22,  5.86it/s]\rTraining:  17%|\u2588\u258b        | 16517/100000 [44:50<3:57:22,  5.86it/s]\rTraining:  17%|\u2588\u258b        | 16692/100000 [45:08<3:57:13,  5.85it/s]\rTraining:  17%|\u2588\u258b        | 16692/100000 [45:20<3:57:13,  5.85it/s]\rTraining:  17%|\u2588\u258b        | 16867/100000 [45:38<3:57:19,  5.84it/s]\rTraining:  17%|\u2588\u258b        | 16867/100000 [45:50<3:57:19,  5.84it/s]\rTraining:  17%|\u2588\u258b        | 17042/100000 [46:09<3:56:58,  5.83it/s]\rTraining:  17%|\u2588\u258b        | 17042/100000 [46:20<3:56:58,  5.83it/s]\rTraining:  17%|\u2588\u258b        | 17216/100000 [46:39<3:56:58,  5.82it/s]\rTraining:  17%|\u2588\u258b        | 17216/100000 [46:50<3:56:58,  5.82it/s]\rTraining:  17%|\u2588\u258b        | 17391/100000 [47:09<3:56:34,  5.82it/s]\rTraining:  17%|\u2588\u258b        | 17391/100000 [47:20<3:56:34,  5.82it/s]\rTraining:  18%|\u2588\u258a        | 17566/100000 [47:39<3:56:11,  5.82it/s]\rTraining:  18%|\u2588\u258a        | 17566/100000 [47:50<3:56:11,  5.82it/s]\rTraining:  18%|\u2588\u258a        | 17748/100000 [48:09<3:52:51,  5.89it/s]\rTraining:  18%|\u2588\u258a        | 17748/100000 [48:20<3:52:51,  5.89it/s]\rTraining:  18%|\u2588\u258a        | 17922/100000 [48:39<3:53:32,  5.86it/s]\rTraining:  18%|\u2588\u258a        | 17922/100000 [48:50<3:53:32,  5.86it/s]\u001b[32mSaving model at total steps 18000\u001b[0m\n\rTraining:  18%|\u2588\u258a        | 18096/100000 [49:09<3:54:04,  5.83it/s]\rTraining:  18%|\u2588\u258a        | 18096/100000 [49:20<3:54:04,  5.83it/s]\rTraining:  18%|\u2588\u258a        | 18270/100000 [49:39<3:53:58,  5.82it/s]\rTraining:  18%|\u2588\u258a        | 18270/100000 [49:50<3:53:58,  5.82it/s]\rTraining:  18%|\u2588\u258a        | 18446/100000 [50:09<3:52:57,  5.83it/s]\rTraining:  18%|\u2588\u258a        | 18446/100000 [50:20<3:52:57,  5.83it/s]\rTraining:  19%|\u2588\u258a        | 18622/100000 [50:39<3:52:15,  5.84it/s]\rTraining:  19%|\u2588\u258a        | 18622/100000 [50:50<3:52:15,  5.84it/s]\rTraining:  19%|\u2588\u2589        | 18796/100000 [51:09<3:52:24,  5.82it/s]\rTraining:  19%|\u2588\u2589        | 18796/100000 [51:20<3:52:24,  5.82it/s]\rTraining:  19%|\u2588\u2589        | 18970/100000 [51:39<3:52:33,  5.81it/s]\rTraining:  19%|\u2588\u2589        | 18970/100000 [51:50<3:52:33,  5.81it/s]\rTraining:  19%|\u2588\u2589        | 19148/100000 [52:10<3:50:47,  5.84it/s]\rTraining:  19%|\u2588\u2589        | 19148/100000 [52:20<3:50:47,  5.84it/s]\rTraining:  19%|\u2588\u2589        | 19323/100000 [52:40<3:50:43,  5.83it/s]\rTraining:  19%|\u2588\u2589        | 19323/100000 [53:00<3:50:43,  5.83it/s]\rTraining:  19%|\u2588\u2589        | 19497/100000 [53:10<3:50:42,  5.82it/s]\rTraining:  19%|\u2588\u2589        | 19497/100000 [53:30<3:50:42,  5.82it/s]\rTraining:  20%|\u2588\u2589        | 19669/100000 [53:40<3:51:23,  5.79it/s]\rTraining:  20%|\u2588\u2589        | 19669/100000 [54:00<3:51:23,  5.79it/s]\rTraining:  20%|\u2588\u2589        | 19844/100000 [54:10<3:50:37,  5.79it/s]\rTraining:  20%|\u2588\u2589        | 19844/100000 [54:30<3:50:37,  5.79it/s]EVALUATION {\"training_step\": 20000, \"seeds\": [237100, 237101, 237102, 237103, 237104, 237105, 237106, 237107, 237108, 237109], \"returns\": [31.0, 0.0, -1.0, 6.0, 0.0, 15.0, 0.0, -2.0, 5.0, 12.0], \"action_counts\": [1786, 1786, 1786, 1786, 1786, 1786, 1786, 1786, 1786, 1786], \"mean\": 6.6, \"seconds\": 21.655821323394775, \"policy\": \"greedy\", \"episodes\": 10}\n\u001b[32mSaving model at total steps 20000\u001b[0m\n\rTraining:  20%|\u2588\u2588        | 20000/100000 [54:59<4:41:39,  4.73it/s]\rTraining:  20%|\u2588\u2588        | 20000/100000 [55:10<4:41:39,  4.73it/s]\rTraining:  20%|\u2588\u2588        | 20177/100000 [55:29<4:23:59,  5.04it/s]\rTraining:  20%|\u2588\u2588        | 20177/100000 [55:40<4:23:59,  5.04it/s]\rTraining:  20%|\u2588\u2588        | 20354/100000 [55:59<4:11:55,  5.27it/s]\rTraining:  20%|\u2588\u2588        | 20354/100000 [56:10<4:11:55,  5.27it/s]\rTraining:  21%|\u2588\u2588        | 20531/100000 [56:29<4:03:14,  5.45it/s]\rTraining:  21%|\u2588\u2588        | 20531/100000 [56:40<4:03:14,  5.45it/s]\rTraining:  21%|\u2588\u2588        | 20709/100000 [56:59<3:56:45,  5.58it/s]\rTraining:  21%|\u2588\u2588        | 20709/100000 [57:10<3:56:45,  5.58it/s]\rTraining:  21%|\u2588\u2588        | 20885/100000 [57:29<3:53:01,  5.66it/s]\rTraining:  21%|\u2588\u2588        | 20885/100000 [57:40<3:53:01,  5.66it/s]\rTraining:  21%|\u2588\u2588        | 21059/100000 [57:59<3:51:01,  5.70it/s]\rTraining:  21%|\u2588\u2588        | 21059/100000 [58:10<3:51:01,  5.70it/s]\rTraining:  21%|\u2588\u2588        | 21236/100000 [58:29<3:48:20,  5.75it/s]\rTraining:  21%|\u2588\u2588        | 21236/100000 [58:40<3:48:20,  5.75it/s]\rTraining:  21%|\u2588\u2588\u258f       | 21414/100000 [58:59<3:45:51,  5.80it/s]\rTraining:  21%|\u2588\u2588\u258f       | 21414/100000 [59:10<3:45:51,  5.80it/s]\rTraining:  22%|\u2588\u2588\u258f       | 21589/100000 [59:29<3:45:00,  5.81it/s]\rTraining:  22%|\u2588\u2588\u258f       | 21589/100000 [59:40<3:45:00,  5.81it/s]\rTraining:  22%|\u2588\u2588\u258f       | 21764/100000 [59:59<3:44:21,  5.81it/s]\rTraining:  22%|\u2588\u2588\u258f       | 21764/100000 [1:00:10<3:44:21,  5.81it/s]\rTraining:  22%|\u2588\u2588\u258f       | 21937/100000 [1:00:29<3:44:33,  5.79it/s]\rTraining:  22%|\u2588\u2588\u258f       | 21937/100000 [1:00:40<3:44:33,  5.79it/s]\u001b[32mSaving model at total steps 22000\u001b[0m\n\rTraining:  22%|\u2588\u2588\u258f       | 22111/100000 [1:01:00<3:44:05,  5.79it/s]\rTraining:  22%|\u2588\u2588\u258f       | 22111/100000 [1:01:10<3:44:05,  5.79it/s]\rTraining:  22%|\u2588\u2588\u258f       | 22288/100000 [1:01:30<3:42:25,  5.82it/s]\rTraining:  22%|\u2588\u2588\u258f       | 22288/100000 [1:01:40<3:42:25,  5.82it/s]\rTraining:  22%|\u2588\u2588\u258f       | 22463/100000 [1:02:00<3:41:50,  5.83it/s]\rTraining:  22%|\u2588\u2588\u258f       | 22463/100000 [1:02:10<3:41:50,  5.83it/s]\rTraining:  23%|\u2588\u2588\u258e       | 22637/100000 [1:02:30<3:41:41,  5.82it/s]\rTraining:  23%|\u2588\u2588\u258e       | 22637/100000 [1:02:40<3:41:41,  5.82it/s]\rTraining:  23%|\u2588\u2588\u258e       | 22811/100000 [1:03:00<3:41:37,  5.80it/s]\rTraining:  23%|\u2588\u2588\u258e       | 22811/100000 [1:03:20<3:41:37,  5.80it/s]\rTraining:  23%|\u2588\u2588\u258e       | 22990/100000 [1:03:30<3:39:30,  5.85it/s]\rTraining:  23%|\u2588\u2588\u258e       | 22990/100000 [1:03:50<3:39:30,  5.85it/s]\rTraining:  23%|\u2588\u2588\u258e       | 23168/100000 [1:04:00<3:38:17,  5.87it/s]\rTraining:  23%|\u2588\u2588\u258e       | 23168/100000 [1:04:20<3:38:17,  5.87it/s]\rTraining:  23%|\u2588\u2588\u258e       | 23348/100000 [1:04:30<3:36:21,  5.90it/s]\rTraining:  23%|\u2588\u2588\u258e       | 23348/100000 [1:04:50<3:36:21,  5.90it/s]\rTraining:  24%|\u2588\u2588\u258e       | 23524/100000 [1:05:00<3:36:22,  5.89it/s]"
+    },
+    {
+      "run_dir": "/root/autodl-tmp/drama-research-20260919/runs/boxing-h1-routed-s3710-100k-20260921",
+      "status": {
+        "phase": "pending",
+        "step": 0
+      },
+      "process_alive": false
+    }
+  ],
+  "disk_free_GiB": 34.196834564208984,
+  "summary": {
+    "pair_phase": "running",
+    "disk_free_GiB": 34.196834564208984,
+    "runs": [
+      {
+        "name": "boxing-readout-control-s3710-100k-20260921",
+        "phase": "training",
+        "step": 23600,
+        "delta": 22300,
+        "alive": true,
+        "status_age_seconds": 2.6510398387908936,
+        "losses_finite": true,
+        "model_loss": 9.838430404663086,
+        "actor_loss": 2.109191417694092,
+        "latest_eval": {
+          "training_step": 20000,
+          "seeds": [
+            237100,
+            237101,
+            237102,
+            237103,
+            237104,
+            237105,
+            237106,
+            237107,
+            237108,
+            237109
+          ],
+          "returns": [
+            31.0,
+            0.0,
+            -1.0,
+            6.0,
+            0.0,
+            15.0,
+            0.0,
+            -2.0,
+            5.0,
+            12.0
+          ],
+          "action_counts": [
+            1786,
+            1786,
+            1786,
+            1786,
+            1786,
+            1786,
+            1786,
+            1786,
+            1786,
+            1786
+          ],
+          "mean": 6.6,
+          "seconds": 21.655821323394775,
+          "policy": "greedy",
+          "episodes": 10
+        },
+        "gpu": "9008 MiB, 70 %",
+        "errors": []
+      },
+      {
+        "name": "boxing-h1-routed-s3710-100k-20260921",
+        "phase": "pending",
+        "step": 0,
+        "delta": 0,
+        "alive": false,
+        "status_age_seconds": null,
+        "losses_finite": null,
+        "model_loss": null,
+        "actor_loss": null,
+        "latest_eval": null,
+        "gpu": null,
+        "errors": []
+      }
+    ]
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "schema": 1,
+  "training_commit": "5829fc831febdbd844506f9d87906e6c0b348cbb",
+  "archive": {
+    "filename": "boxing-routed-s3710-100k-5829fc8.tar.gz",
+    "bytes": 114962208,
+    "sha256": "0c65d0b618e63e6902f70d3e35b9c0439c8b8bb46eac053b25bfd1b137718b0a",
+    "files": 173,
+    "created_unix": 1790018668.0515656
+  },
+  "parts": [
+    {
+      "index": 0,
+      "name": "boxing-routed-s3710-100k-5829fc8.tar.gz.part000",
+      "bytes": 12582912,
+      "sha256": "bdbddb70f101b1f8fcf6b0c965f6e9ff9d408628754f762bfbed4e4dc93a949c",
+      "asset_id": 579706774,
+      "url": "https://github.com/ct1021/Drama/releases/download/boxing-routed-s3710-100k-20260921/boxing-routed-s3710-100k-5829fc8.tar.gz.part000"
+    },
+    {
+      "index": 1,
+      "name": "boxing-routed-s3710-100k-5829fc8.tar.gz.part001",
+      "bytes": 12582912,
+      "sha256": "2482c54b79f62cf67e6c328ca170793de6a9d37c7b0b8979dee36bc40abd6860",
+      "asset_id": 579706775,
+      "url": "https://github.com/ct1021/Drama/releases/download/boxing-routed-s3710-100k-20260921/boxing-routed-s3710-100k-5829fc8.tar.gz.part001"
+    },
+    {
+      "index": 2,
+      "name": "boxing-routed-s3710-100k-5829fc8.tar.gz.part002",
+      "bytes": 12582912,
+      "sha256": "bf5b4cbd520dacf0180470137ae67bfebc0fa7af7164db5f5f48bb562e80f286",
+      "asset_id": 579706777,
+      "url": "https://github.com/ct1021/Drama/releases/download/boxing-routed-s3710-100k-20260921/boxing-routed-s3710-100k-5829fc8.tar.gz.part002"
+    },
+    {
+      "index": 3,
+      "name": "boxing-routed-s3710-100k-5829fc8.tar.gz.part003",
+      "bytes": 12582912,
+      "sha256": "64642887aade3478c3fef82115cd1bcea1a1d7bb5fb7e50c7b506369bd9bac91",
+      "asset_id": 579706778,
+      "url": "https://github.com/ct1021/Drama/releases/download/boxing-routed-s3710-100k-20260921/boxing-routed-s3710-100k-5829fc8.tar.gz.part003"
+    },
+    {
+      "index": 4,
+      "name": "boxing-routed-s3710-100k-5829fc8.tar.gz.part004",
+      "bytes": 12582912,
+      "sha256": "cba67122d99e0bb4eae32e86bfa2b39e9ade7c34c9c2c7edd32cf96db83b3e5d",
+      "asset_id": 579706863,
+      "url": "https://github.com/ct1021/Drama/releases/download/boxing-routed-s3710-100k-20260921/boxing-routed-s3710-100k-5829fc8.tar.gz.part004"
+    },
+    {
+      "index": 5,
+      "name": "boxing-routed-s3710-100k-5829fc8.tar.gz.part005",
+      "bytes": 12582912,
+      "sha256": "fe604d9e44060cd507255fe615df38696b8d37ca5553f9e20640a9c34a43eb4e",
+      "asset_id": 579706907,
+      "url": "https://github.com/ct1021/Drama/releases/download/boxing-routed-s3710-100k-20260921/boxing-routed-s3710-100k-5829fc8.tar.gz.part005"
+    },
+    {
+      "index": 6,
+      "name": "boxing-routed-s3710-100k-5829fc8.tar.gz.part006",
+      "bytes": 12582912,
+      "sha256": "af0baea030adcab551607cdb2fa83524a0f57a15ceefc91ce088b6e4f4a0d8c7",
+      "asset_id": 579706909,
+      "url": "https://github.com/ct1021/Drama/releases/download/boxing-routed-s3710-100k-20260921/boxing-routed-s3710-100k-5829fc8.tar.gz.part006"
+    },
+    {
+      "index": 7,
+      "name": "boxing-routed-s3710-100k-5829fc8.tar.gz.part007",
+      "bytes": 12582912,
+      "sha256": "c076533dc726c513fc9627ab243a5d3974be329239538439498e00c6ff37a3a6",
+      "asset_id": 579707083,
+      "url": "https://github.com/ct1021/Drama/releases/download/boxing-routed-s3710-100k-20260921/boxing-routed-s3710-100k-5829fc8.tar.gz.part007"
+    },
+    {
+      "index": 8,
+      "name": "boxing-routed-s3710-100k-5829fc8.tar.gz.part008",
+      "bytes": 12582912,
+      "sha256": "d5812a588382f1c4a1940c793bcfa2bbe63df4e94f31695749d7075ffc283482",
+      "asset_id": 579707082,
+      "url": "https://github.com/ct1021/Drama/releases/download/boxing-routed-s3710-100k-20260921/boxing-routed-s3710-100k-5829fc8.tar.gz.part008"
+    },
+    {
+      "index": 9,
+      "name": "boxing-routed-s3710-100k-5829fc8.tar.gz.part009",
+      "bytes": 1716000,
+      "sha256": "4a80551b9c1437a7ebfa23a3b1c1c2e610ed404893a472ee9d15a3d023eaab9a",
+      "asset_id": 579707084,
+      "url": "https://github.com/ct1021/Drama/releases/download/boxing-routed-s3710-100k-20260921/boxing-routed-s3710-100k-5829fc8.tar.gz.part009"
+    }
+  ],
+  "release_url": "https://github.com/ct1021/Drama/releases/tag/boxing-routed-s3710-100k-20260921"
+}

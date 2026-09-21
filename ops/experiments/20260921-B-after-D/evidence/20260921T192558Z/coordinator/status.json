@@ -1,0 +1,44 @@
+{
+  "phase": "training",
+  "pid": 26998,
+  "started_unix": 1790002301.220462,
+  "code_commit": "f401807975d9ad050c61f795e09a5b4b7e27f2ef",
+  "predecessor": "/root/autodl-tmp/drama-research-20260919/runs/boxing-h1-routed-s3710-100k-20260921",
+  "run_dir": "/root/autodl-tmp/drama-research-20260919/runs/boxing-optimization-control-s3710-100k-20260922",
+  "wait_deadline_unix": 1790023635.2668412,
+  "preflight_limit_seconds": 900,
+  "formal_limit_seconds": 25200,
+  "automatic_restart": false,
+  "additional_runs": false,
+  "updated_unix": 1790016503.2662897,
+  "predecessor_step": 100000,
+  "predecessor_phase": "evaluating",
+  "preflight_started_unix": 1790016282.3172405,
+  "child_supervisor_pid": 35391,
+  "formal_started_unix": 1790016503.265546,
+  "gate": {
+    "passed": true,
+    "window": [
+      1200,
+      1700
+    ],
+    "seconds_per_interaction": 0.17221671628952026,
+    "time_ratio_vs_A": 0.9957888207247763,
+    "threshold": 1.15,
+    "finite_metric_rows": 20746,
+    "final_log_scales": {
+      "WorldModel/Harmony/image_log_scale": 0.007336560171097517,
+      "WorldModel/Harmony/reward_log_scale": -0.0029453460592776537,
+      "WorldModel/Harmony/kl_log_scale": 0.004720906727015972
+    },
+    "step": 1800,
+    "scope": "Engineering gate, not RL performance",
+    "checkpoint_log_scales": [
+      0.007346993312239647,
+      -0.0029587154276669025,
+      0.004733514506369829
+    ],
+    "code_commit": "f401807975d9ad050c61f795e09a5b4b7e27f2ef",
+    "reference_file": "/root/autodl-tmp/drama-research-20260919/runs/h1-integration-1800-5829fc8/integration-summary.json"
+  }
+}

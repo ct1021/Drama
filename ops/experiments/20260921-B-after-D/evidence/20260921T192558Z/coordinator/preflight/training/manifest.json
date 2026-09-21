@@ -1,0 +1,52 @@
+{
+  "code_commit": "f401807975d9ad050c61f795e09a5b4b7e27f2ef",
+  "branch": "",
+  "command": [
+    "ops/run_atari100k.py",
+    "--profile",
+    "lightweight-harmonized",
+    "--run-dir",
+    "/root/autodl-tmp/drama-research-20260919/runs/b-after-d-s3710-20260921/preflight/training",
+    "--game",
+    "Boxing",
+    "--seed",
+    "3710",
+    "--steps",
+    "1800",
+    "--eval-episodes",
+    "2",
+    "--max-hours",
+    "0.23256018324334743"
+  ],
+  "scope": "integration_only",
+  "env": "ALE/Boxing-v5",
+  "seed": 3710,
+  "target_interactions": 1800,
+  "eval_interval": 10000,
+  "eval_episodes": 2,
+  "compile": false,
+  "amp": true,
+  "cuda_graph": true,
+  "profile": "lightweight-harmonized",
+  "architecture": "B: original lightweight architecture; three rectified loss weights; HarmonyDream adaptation",
+  "routing": null,
+  "harmonization": {
+    "method": "HarmonyDream-inspired rectified weighting",
+    "tasks": [
+      "image",
+      "reward",
+      "dynamics+0.1*representation"
+    ],
+    "termination_weight": 1.0,
+    "initial_log_scales": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "scalar_weight_decay": 0.0,
+    "scope": "Drama optimization control; not full HarmonyDream reproduction"
+  },
+  "wall_time_limit_hours": 0.23256018324334743,
+  "automatic_next_run": false,
+  "checkpoint_scope": "weights only; not exact resumable training state"
+}

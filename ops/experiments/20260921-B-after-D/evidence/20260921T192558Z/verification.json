@@ -1,0 +1,156 @@
+{
+  "code_commit": "f401807975d9ad050c61f795e09a5b4b7e27f2ef",
+  "snapshot_unix": 1790018762.1170123,
+  "coordinator_terminal": false,
+  "files": [
+    {
+      "path": "coordinator/D-completed-evidence.json",
+      "bytes": 9525,
+      "sha256": "836cf13b7669e379ee94a66f7aec7fcadc4c955f3a8d6a68398785cb900b2182"
+    },
+    {
+      "path": "coordinator/preflight/gate.json",
+      "bytes": 784,
+      "sha256": "bdd88c018ce53b0f3a64e219d2e85c4675c5743faff76d75b857176f44340c43"
+    },
+    {
+      "path": "coordinator/preflight/gpu.json",
+      "bytes": 1134,
+      "sha256": "3a715a7054e7a2a3a7f0b119d37262f88547991e87526a8226834798dae19aed"
+    },
+    {
+      "path": "coordinator/preflight/gpu.log",
+      "bytes": 1690,
+      "sha256": "10b77c74916facd99040fffcfc740769e22347c12460fc76c92931b1423a39a6"
+    },
+    {
+      "path": "coordinator/preflight/integration.log",
+      "bytes": 2177,
+      "sha256": "2045709b8bc4ae28fa83661adeb3101110bd2bd8453795e595f5eca9a31bfb08"
+    },
+    {
+      "path": "coordinator/preflight/test_experiment_profiles.py.log",
+      "bytes": 103,
+      "sha256": "888a0c0ed615e57d32cf72be501b0c355f33b8613c81dfdaa99db33d7959487e"
+    },
+    {
+      "path": "coordinator/preflight/test_loss_harmonization.py.log",
+      "bytes": 103,
+      "sha256": "23133ec87feb236137ef84e790c19ff8a50d7b9625df4c17243deba5a52040ae"
+    },
+    {
+      "path": "coordinator/preflight/test_training_protocol.py.log",
+      "bytes": 156,
+      "sha256": "8895dd339c28eb4de568ec0ac7201b67e817ad3c79fdd88c0c69e6714cac233e"
+    },
+    {
+      "path": "coordinator/preflight/training/ckpt/agent-final.pth",
+      "bytes": 13690652,
+      "sha256": "02846cd9b1e6983c80f68774cea99f8baa6f3ce32c9890759fef6258339276f4"
+    },
+    {
+      "path": "coordinator/preflight/training/ckpt/world_model-final.pth",
+      "bytes": 28690659,
+      "sha256": "78b832fbe83af2ccbfdf747e74038f3a987ac43cd7c9fef9098acd64641b802c"
+    },
+    {
+      "path": "coordinator/preflight/training/config.resolved.json",
+      "bytes": 4387,
+      "sha256": "5cb53f20fc3f0d0f0d6d63d6da393f78247c8f6f6f194832d281b6319e18ec22"
+    },
+    {
+      "path": "coordinator/preflight/training/evaluations.jsonl",
+      "bytes": 189,
+      "sha256": "554a7eb20ad5a062c5631ef54beb1dc19cbdd6809763261beef96409ab4472fa"
+    },
+    {
+      "path": "coordinator/preflight/training/manifest.json",
+      "bytes": 1361,
+      "sha256": "13571c54ab67f09cd41fe07a2cccd8500d77a7187ed73a86dd4c902865eca9ac"
+    },
+    {
+      "path": "coordinator/preflight/training/metrics.jsonl",
+      "bytes": 2322808,
+      "sha256": "a1ad6316f89c7a601b0f1fc0bada8214290cd18cdf3be4aafc5ede09c2dbf9b8"
+    },
+    {
+      "path": "coordinator/preflight/training/status.json",
+      "bytes": 2275,
+      "sha256": "3a66ab18ad2d0f52fa283d33f4df8d58321850315509e690d66607984f5fde2b"
+    },
+    {
+      "path": "coordinator/preflight.log",
+      "bytes": 715,
+      "sha256": "6dac25aee12a4300a6b6108024620de072d7ce66678b1015772af7061f2d9ab3"
+    },
+    {
+      "path": "coordinator/status.json",
+      "bytes": 1595,
+      "sha256": "b85d04a247467eac6fc802e398f90ad3df9d2d10011555c08d6f026c5d6b4dfb"
+    },
+    {
+      "path": "B-after-D-console.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "source/ops/run_b_after_d.py",
+      "bytes": 6249,
+      "sha256": "1ba4f12c58be010d5c7b46872c59fb14c9e98bde85ef7d055c95c7d6fcb2affd"
+    },
+    {
+      "path": "source/ops/validate_b_stage.py",
+      "bytes": 2294,
+      "sha256": "5a09813591876d481693db7c29c245cb8dbc3c7ddb4f239d6c554e42feae573d"
+    },
+    {
+      "path": "source/ops/verify_b_control.py",
+      "bytes": 2189,
+      "sha256": "5fe876256ce085326344bd1f96aa47901b2436d30e9690d829729077399bb056"
+    },
+    {
+      "path": "source/ops/b_gate.py",
+      "bytes": 2329,
+      "sha256": "667436b1f4377d9b81661d2ddfe505262f33e2e7e99dba7a621100cc784aae73"
+    },
+    {
+      "path": "source/ops/run_atari100k.py",
+      "bytes": 11297,
+      "sha256": "e615da3d1a4449821cbfb3d783622384d2fc7fa238aba0f79d9ca03761e32ec5"
+    },
+    {
+      "path": "source/ops/experiment_profiles.py",
+      "bytes": 1283,
+      "sha256": "3457c22f73f8a98eaed211496e81360d5cb656c115e1134b09d71c5e05685115"
+    },
+    {
+      "path": "source/sub_models/loss_harmonization.py",
+      "bytes": 1873,
+      "sha256": "44008f2264a5633309595c96cc57a838e0800a3f4901669de151cf461aacce78"
+    },
+    {
+      "path": "source/sub_models/world_models.py",
+      "bytes": 37537,
+      "sha256": "70a749db462f0ba12baacdc1c1f1734a2e426336f99b2c45e4ea820a43bcaa2b"
+    },
+    {
+      "path": "formal-snapshot/status.json",
+      "bytes": 2293,
+      "sha256": "4a1cb9be0b96f5fdbe98e4834cf0a2f3458c04425cdbd7539e28ad44cac99ff7"
+    },
+    {
+      "path": "formal-snapshot/manifest.json",
+      "bytes": 1343,
+      "sha256": "6603460505552b5ab60c58e10f59785cd571bd121dbef12b03c04fbd3df9a5ec"
+    },
+    {
+      "path": "formal-snapshot/config.resolved.json",
+      "bytes": 4395,
+      "sha256": "3ab8788a5451b6b280d2fbdc26a65b2d2a05855596c1ab95bae45defaea217cb"
+    }
+  ],
+  "archive_sha256": "b7f8bfe25dbad333c392d6a5bb35dcae303e688434da0e7616463700cbc20a1f",
+  "archive_bytes": 39661873,
+  "all_files_verified": true,
+  "source_matches_local_commit": true
+}
