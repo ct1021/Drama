@@ -189,11 +189,14 @@ def main():
         commit = subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip()
         atomic_json(args.run_dir / 'manifest.json', dict(
             code_commit=commit, branch=subprocess.check_output(['git', 'branch', '--show-current'], text=True).strip(),
-            command=sys.argv, scope='baseline' if args.steps == 100000 else 'integration_only',
+            command=sys.argv, scope=('architecture_candidate' if args.profile == 'lightweight-routed'
+                                    else 'architecture_control' if args.profile == 'lightweight-readout'
+                                    else 'baseline') if args.steps == 100000 else 'integration_only',
             env=config.BasicSettings.Env_name, seed=args.seed, target_interactions=args.steps,
             eval_interval=10000, eval_episodes=args.eval_episodes,
             compile=False, amp=config.BasicSettings.Use_amp, cuda_graph=config.BasicSettings.Use_cg,
             profile=args.profile, architecture=PROFILES[args.profile],
+            routing=world_model.routing_metadata,
             wall_time_limit_hours=args.max_hours, automatic_next_run=False,
             checkpoint_scope='weights only; not exact resumable training state'))
         replay = ReplayBuffer(config, device='cuda:0', action_dim=action_dim, is_discrete=True)

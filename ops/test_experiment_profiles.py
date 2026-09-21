@@ -28,6 +28,12 @@ class ProfileTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             apply_profile(self.raw, 'typo')
 
+    def test_routing_profiles_only_add_routing_to_lightweight(self):
+        for profile, mode in [('lightweight-readout', 'readout'), ('lightweight-routed', 'routed')]:
+            result = apply_profile(self.raw, profile)
+            self.assertEqual(result['Models']['WorldModel'].pop('TaskRouting'), mode)
+            self.assertEqual(result, apply_profile(self.raw, 'lightweight'))
+
 
 if __name__ == '__main__':
     unittest.main()

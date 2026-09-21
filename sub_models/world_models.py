@@ -364,6 +364,12 @@ class WorldModel(nn.Module):
             dtype=config.Models.WorldModel.dtype, device=device
         )
         self.termination_decoder.apply(weight_init)
+
+        routing_mode = config.Models.WorldModel.get('TaskRouting', 'none')
+        self.routing_metadata = None
+        if routing_mode != 'none':
+            from sub_models.task_routing import install_task_routing
+            self.routing_metadata = install_task_routing(self, routing_mode)
  
         self.mse_loss_func = MSELoss()
         self.ce_loss = nn.CrossEntropyLoss()
