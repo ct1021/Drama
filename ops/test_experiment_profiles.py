@@ -8,7 +8,9 @@ class ProfileTests(unittest.TestCase):
         self.raw = dict(Models=dict(WorldModel=dict(
             Encoder=dict(Mults=[1, 2, 4, 8], Depth=16),
             Decoder=dict(Mults=[1, 2, 4, 8], Depth=16),
-            Mamba=dict(n_layer=2, ssm_cfg=dict(d_state=16))), Agent=dict(hidden=256)),
+            Mamba=dict(n_layer=2, ssm_cfg=dict(d_state=16)),
+            HiddenStateDim=512),
+            Agent=dict(hidden=256, AC=dict(Actor=dict(HiddenUnits=256), Critic=dict(HiddenUnits=512)))),
             JointTrainAgent=dict(BatchSize=16, BatchLength=128, ImagineBatchSize=1024))
 
     def test_public_unchanged_and_independent(self):
@@ -33,6 +35,16 @@ class ProfileTests(unittest.TestCase):
             result = apply_profile(self.raw, profile)
             self.assertEqual(result['Models']['WorldModel'].pop('TaskRouting'), mode)
             self.assertEqual(result, apply_profile(self.raw, 'lightweight'))
+
+    def test_parameter_matched_profile_sets_only_explicit_width_and_route(self):
+        result = apply_profile(self.raw, 'lightweight-routed-budgetmatched')
+        self.assertEqual(result['Models']['WorldModel']['TaskRouting'], 'routed')
+        self.assertEqual(result['Models']['WorldModel']['HiddenStateDim'], 640)
+        self.assertEqual(result['Models']['Agent']['AC']['Actor']['HiddenUnits'], 192)
+        self.assertEqual(result['Models']['WorldModel']['Encoder']['Mults'], [1, 2, 3, 4, 4])
+        self.assertEqual(result['Models']['WorldModel']['Decoder']['Mults'], [1, 2, 3, 4, 4])
+        self.assertEqual(self.raw['Models']['WorldModel'].get('HiddenStateDim'), 512)
+        self.assertEqual(self.raw['Models']['Agent']['AC']['Actor']['HiddenUnits'], 256)
 
     def test_B_only_adds_loss_harmonization(self):
         result = apply_profile(self.raw, 'lightweight-harmonized')

@@ -184,6 +184,15 @@ def main():
             actual = sum(p.numel() for p in world_model.parameters())
             if actual != 7161603:
                 raise RuntimeError(f'Lightweight Boxing parameter count changed: {actual}')
+        if args.profile == 'lightweight-routed-budgetmatched' and args.game == 'Boxing':
+            actual = sum(p.numel() for p in world_model.parameters())
+            if actual != 7163163:
+                raise RuntimeError(f'Parameter-matched H1 Boxing parameter count changed: {actual}')
+            agent_actual = sum(p.numel() for p in agent.parameters())
+            if agent_actual != 3418128:
+                raise RuntimeError(f'Parameter-matched H1 agent parameter count changed: {agent_actual}')
+            if actual + agent_actual != 10581291:
+                raise RuntimeError(f'Parameter-matched H1 total parameter count changed: {actual + agent_actual}')
         if args.profile == 'lightweight-harmonized' and args.game == 'Boxing':
             actual = sum(p.numel() for p in world_model.parameters())
             if actual != 7161606:
@@ -193,7 +202,7 @@ def main():
         commit = subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip()
         atomic_json(args.run_dir / 'manifest.json', dict(
             code_commit=commit, branch=subprocess.check_output(['git', 'branch', '--show-current'], text=True).strip(),
-            command=sys.argv, scope=('architecture_candidate' if args.profile == 'lightweight-routed'
+            command=sys.argv, scope=('architecture_candidate' if args.profile in ('lightweight-routed', 'lightweight-routed-budgetmatched')
                                     else 'architecture_control' if args.profile == 'lightweight-readout'
                                     else 'optimization_control' if args.profile == 'lightweight-harmonized'
                                     else 'baseline') if args.steps == 100000 else 'integration_only',
