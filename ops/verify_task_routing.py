@@ -1,5 +1,5 @@
 """Bounded GPU routing checks and component timing; no optimizer steps."""
-import contextlib,copy,gc,json,statistics,sys,time,traceback
+import argparse,contextlib,copy,gc,json,statistics,sys,time,traceback
 from pathlib import Path
 import torch
 import yaml
@@ -54,7 +54,7 @@ def run(profile):
             reset=seq(latent[:,:prefill].contiguous(),actions[:,:prefill].contiguous(),inference_params=cache)
             torch.testing.assert_close(full[:,:prefill],reset,rtol=2e-3,atol=2e-3)
         leak_errors=[];private_changes=[]
-        if profile=='lightweight-routed':
+        if 'routed' in profile:
             cache=InferenceParams(max_seqlen=16,max_batch_size=2)
             seq(latent[:,:8].contiguous(),actions[:,:8].contiguous(),inference_params=cache)
             cache.seqlen_offset=8
@@ -68,8 +68,9 @@ def run(profile):
                     cs=slice(3*mixer.d_inner//4,mixer.d_inner) if role=='reward' else slice(mixer.d_inner//2,3*mixer.d_inner//4)
                     ssm[:,hs]+=0.5;conv[:,cs]+=0.5
                 actual=seq(latent[:,8:9].contiguous(),actions[:,8:9].contiguous(),inference_params=changed)
-                private=slice(384,512) if role=='reward' else slice(256,384)
-                allowed=list(range(384)) if role=='reward' else list(range(256))+list(range(384,512))
+                width=wm.hidden_state_dim
+                private=slice(3*width//4,width) if role=='reward' else slice(width//2,3*width//4)
+                allowed=list(range(3*width//4)) if role=='reward' else list(range(width//2))+list(range(3*width//4,width))
                 leak=float((actual[...,allowed]-expected[...,allowed]).abs().max())
                 effect=float((actual[...,private]-expected[...,private]).abs().max())
                 assert leak<2e-5 and effect>1e-6,(role,leak,effect)
@@ -82,7 +83,9 @@ def run(profile):
         torch.testing.assert_close(decision,decision_reference,rtol=2e-3,atol=2e-3)
     cache=seq.allocate_inference_cache(1,24,dtype=torch.float32)
     cache_bytes=sum(t.numel()*t.element_size() for pair in cache.values() for t in pair)
-    assert cache_bytes==164864,cache_bytes
+    if wm.hidden_state_dim == 512:
+        assert cache_bytes == 164864, cache_bytes
+    assert cache_bytes > 0
     obs=torch.rand(16,128,3,64,64,device='cuda');act=torch.randint(18,(16,128),device='cuda')
     targets=torch.zeros(16,128,device='cuda')
     wm.train()
@@ -121,13 +124,20 @@ def run(profile):
                 optimizer_parameter_coverage=True,reset_prefill_lengths=[1,8],real_decision_matches_sequence=True,
                 default_cuda_graph=bool(wm.use_cg),prediction_forward_backward=backward_time,
                 imagination_1024x16=imagination_time,optimizer_steps=0)
+    if profile == 'lightweight-routed-budgetmatched':
+        assert result['world_model_parameters'] == 7163163
+        assert sum(p.numel() for p in agent.parameters()) == 3418128
+        assert result['world_model_parameters'] + sum(p.numel() for p in agent.parameters()) == 10581291
     del wm,agent;gc.collect();torch.cuda.empty_cache()
     return result
 
 
 if __name__=='__main__':
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--profiles', nargs='+', default=['lightweight','lightweight-readout','lightweight-routed'])
+    args=parser.parse_args()
     results=[]
-    for profile in ('lightweight','lightweight-readout','lightweight-routed'):
+    for profile in args.profiles:
         try:
             with contextlib.redirect_stdout(sys.stderr):result=run(profile)
             results.append(dict(ok=True,**result));print(json.dumps(results[-1]),flush=True)
@@ -135,4 +145,4 @@ if __name__=='__main__':
             results.append(dict(profile=profile,ok=False,error=traceback.format_exc()))
             print(json.dumps(results[-1]),flush=True);break
     print(json.dumps({'scope':'GPU engineering checks and synthetic timing; not RL performance','results':results}),flush=True)
-    raise SystemExit(0 if len(results)==3 and all(r['ok'] for r in results) else 1)
+    raise SystemExit(0 if len(results)==len(args.profiles) and all(r['ok'] for r in results) else 1)
