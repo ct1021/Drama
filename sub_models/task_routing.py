@@ -110,6 +110,13 @@ def install_task_routing(world_model, mode):
     if world_model.model != 'Mamba2':
         raise ValueError('Task routing currently supports Mamba2 only')
     backbone = world_model.sequence_model.backbone
+    mamba2_module = None
+    if mode == 'routed':
+        # causal-conv1d requires the packed [z, x, B, C, dt] stride to be
+        # 8-aligned. Some valid H1 widths (for example 640) are not aligned
+        # after adding the routed dt sections, so use the reference grouped
+        # Conv1d path for this process instead of failing at runtime.
+        from mamba_ssm.modules import mamba2 as mamba2_module
     layout = sections(world_model.hidden_state_dim)
     if mode == 'routed':
         for block in backbone.layers:
@@ -119,6 +126,8 @@ def install_task_routing(world_model, mode):
                 raise ValueError('Unsupported Mamba configuration for H1-R1')
             inner = sections(m.d_inner)
             packed = inner + inner + (('shared', m.d_state), ('shared', m.d_state)) + sections(m.nheads)
+            if (2 * m.d_inner + 2 * m.ngroups * m.d_state + m.nheads) % 8:
+                mamba2_module.causal_conv1d_fn = None
             m.in_proj = RoutedLinear(m.in_proj, layout, packed)
             m.out_proj = RoutedLinear(m.out_proj, inner, layout)
             m.norm = PartitionRMSNorm(m.norm, [n for _, n in inner], gated=True)
@@ -139,4 +148,8 @@ def install_task_routing(world_model, mode):
     return {'mode': mode, 'widths': [n for _, n in layout], 'bc_groups': 1,
             'private_bc_dependency': False if mode == 'routed' else None,
             'dense_weight_materialization': mode == 'routed',
-            'combined_mamba_kernel': mode != 'routed', 'claim': 'experimental; not performance validated'}
+            'combined_mamba_kernel': mode != 'routed',
+            'reference_conv_fallback': bool(mode == 'routed' and mamba2_module is not None
+                                            and any((2 * block.mixer.d_inner + 2 * block.mixer.ngroups * block.mixer.d_state
+                                                     + block.mixer.nheads) % 8 for block in backbone.layers)),
+            'claim': 'experimental; not performance validated'}
